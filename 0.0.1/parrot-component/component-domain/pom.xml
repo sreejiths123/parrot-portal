@@ -7,6 +7,7 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.parrot.eshop</groupId>
+  <version>${version.parrot.build}</version>
   <artifactId>component-domain</artifactId>
   <name>component-domain</name>
 </project>
