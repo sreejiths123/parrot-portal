@@ -8,7 +8,9 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.parrot.eshop</groupId>
   <artifactId>user-interface-webapp</artifactId>
+  <version>${version.parrot.build}</version>
   <packaging>war</packaging>
   <name>user-interface-webapp</name>  
+  
 </project>
 
