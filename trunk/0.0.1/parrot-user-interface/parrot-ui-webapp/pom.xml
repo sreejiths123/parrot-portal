@@ -9,7 +9,6 @@
   <groupId>com.parrot.eshop</groupId>
   <artifactId>user-interface-webapp</artifactId>
   <packaging>war</packaging>
-  <name>user-interface-webapp</name>
-  <version>0.0.1</version>
+  <name>user-interface-webapp</name>  
 </project>
 
