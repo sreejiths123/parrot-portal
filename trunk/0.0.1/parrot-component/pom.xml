@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+>
+  <parent>
+    <artifactId>eshop-parent</artifactId>
+    <groupId>com.parrot.eshop</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <version>1.0-SNAPSHOT</version>
+  <groupId>com.parrot.eshop</groupId>
+  <artifactId>component-parent</artifactId>
+  <packaging>pom</packaging>
+  <name>component-parent</name>
+  <description></description>
+
+  <modules>
+    <module>component-domain</module>
+  </modules>
+
+</project>
