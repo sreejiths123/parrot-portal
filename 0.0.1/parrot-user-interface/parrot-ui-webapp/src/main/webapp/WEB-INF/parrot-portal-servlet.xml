@@ -8,7 +8,7 @@
         <property name="commandClass"><value>java.lang.String</value></property>
         <!-- property name="validator"><ref bean="priceIncreaseValidator"/></property -->
         <property name="formView"><value>index</value></property>
-        <property name="successView"><value>success.html</value></property>
+        <property name="successView"><value>success.htm</value></property>
     </bean>
     
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping"> 
