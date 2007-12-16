@@ -2,7 +2,7 @@
  * Copyright 2007 NetCom. All rights reserved.
  ******************************************************************************/
 
-package com.parrot.eshop.webapp;
+package com.parrot.portal.domain.eshop;
 
 
 /**

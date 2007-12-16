@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 
-<!--
-  - Application context definition for "springapp" DispatcherServlet.
-  -->
-
 <beans>
-    <bean id="springappController" class="SpringappController"/>
-
-    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+    <bean id="indexForm" class="com.parrot.portal.controller.MyController">
+        <property name="sessionForm"><value>true</value></property>
+        <property name="commandName"><value>string</value></property>
+        <property name="commandClass"><value>java.lang.String</value></property>
+        <!-- property name="validator"><ref bean="priceIncreaseValidator"/></property -->
+        <property name="formView"><value>index</value></property>
+        <property name="successView"><value>success.html</value></property>
+    </bean>
+    
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping"> 
         <property name="mappings">
             <props>
-                <prop key="/index.jsp">springappController</prop>
+                <prop key="/index.html">indexForm</prop>
             </props>
         </property>
     </bean>
+
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass">
+           <value>org.springframework.web.servlet.view.JstlView</value>
+        </property>
+        <property name="prefix"><value>/</value></property>
+        <property name="suffix"><value>.jsp</value></property>
+    </bean>
+    
 </beans>
