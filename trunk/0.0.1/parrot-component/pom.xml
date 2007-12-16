@@ -16,7 +16,7 @@
   <description></description>
 
   <modules>
-    <module>component-domain</module>
+    <module>parrot-component-domain</module>
   </modules>
 
 </project>
