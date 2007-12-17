@@ -24,24 +24,24 @@ public class ContactValidator implements Validator {
     public void validate(Object obj, Errors errors) {
         
         if (!(obj instanceof IContact)) {
-            errors.reject("Given object is not an instance of IContact.");
+            errors.reject("com.parrot.portal.error.given_object_is_not_correct_one");
         }
         
         IContact contact = (IContact)obj;
         
         if (contact.getId() < 0) {
-            errors.reject("ID cannot be negative");
+            errors.rejectValue("id", "com.parrot.portal.error.contact.id_cannot_be_negative");
         }
         
         if (contact.getName() == null) {
-            errors.reject("Name must be set.");
+            errors.rejectValue("name", "com.parrot.portal.error.contact.name.must_be_set");
         } else {
             if (isEmpty(contact.getName().getFirstName())) {
-                errors.reject("First name cannot be empty.");
+                errors.rejectValue("name.firstName", "com.parrot.portal.error.contact.name.first_name_cannot_be_empty");
             }
             
             if (isEmpty(contact.getName().getLastName())) {
-                errors.reject("Last name cannot be empty.");
+                errors.rejectValue("name.lastName", "com.parrot.portal.error.contact.name.last_name_cannot_be_empty");
             }
         }
     }

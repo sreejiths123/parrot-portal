@@ -21,6 +21,8 @@
 		<td>
 		<spring:bind path="id">
 			<input type="text" name="id" value="<c:out value="${status.value}"/>" />
+			<br />
+			<font color="red"><c:out value="${status.errorMessage}"/></font>
 		</spring:bind>
 		</td>
 	</tr>
@@ -31,6 +33,8 @@
 		
 			<spring:bind path="firstName">
 				<input type="text" name="firstName" value="<c:out value="${status.value}"/>" />
+				<br />
+				<font color="red"><c:out value="${status.errorMessage}"/></font>
 			</spring:bind>	
 		</td>
 	</tr>
@@ -39,6 +43,8 @@
 		<td>
 			<spring:bind path="lastName">
 				<input type="text" name="lastName" value="<c:out value="${status.value}"/>" />
+				<br />
+				<font color="red"><c:out value="${status.errorMessage}"/></font>
 			</spring:bind>
 		</td>
 	</tr>
