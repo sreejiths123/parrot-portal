@@ -25,6 +25,16 @@
         </exclusion>
       </exclusions-->
     </dependency>
+    <dependency>
+      <groupId>com.parrot.eshop</groupId>
+      <artifactId>component-domain</artifactId>
+      <version>${version.parrot.build}</version>
+    </dependency>
+    <dependency>
+      <groupId>taglibs</groupId>
+      <artifactId>standard</artifactId>
+      <version>1.1.2</version>
+    </dependency>
   </dependencies>
   
 </project>
