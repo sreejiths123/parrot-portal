@@ -3,20 +3,36 @@
 <!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
 
 <web-app>
-  <servlet>
-    <servlet-name>parrot-portal</servlet-name>
-    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-    <load-on-startup>1</load-on-startup>
-  </servlet>
- 
-  <servlet-mapping>
-    <servlet-name>parrot-portal</servlet-name>
-    <url-pattern>*.html</url-pattern>
-  </servlet-mapping>
+	<servlet>
+		<servlet-name>parrot-portal</servlet-name>
+		<servlet-class>
+			org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
 
-  <welcome-file-list>
-    <welcome-file>
-      index.html
-    </welcome-file>
-  </welcome-file-list>
+	<servlet-mapping>
+		<servlet-name>parrot-portal</servlet-name>
+		<url-pattern>*.html</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+	<taglib>
+		<taglib-uri>/spring</taglib-uri>
+		<taglib-location>/META-INF/spring.tld</taglib-location>
+	</taglib>
+
+	<taglib>
+		<taglib-uri>/spring-form</taglib-uri>
+		<taglib-location>/META-INF/spring-form.tld</taglib-location>
+	</taglib>
+
+	<taglib>
+		<taglib-uri>http://java.sun.com/jstl/core</taglib-uri>
+		<taglib-location>/META-INF/c.tld</taglib-location>
+	</taglib>
+
 </web-app>
