@@ -4,6 +4,8 @@
 
 package com.parrot.portal.domain.eshop;
 
+import com.parrot.portal.domain.core.IName;
+
 
 /**
  * @author tajzivit

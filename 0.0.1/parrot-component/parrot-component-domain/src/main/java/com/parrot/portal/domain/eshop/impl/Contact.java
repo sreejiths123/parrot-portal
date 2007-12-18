@@ -4,8 +4,8 @@
 
 package com.parrot.portal.domain.eshop.impl;
 
+import com.parrot.portal.domain.core.IName;
 import com.parrot.portal.domain.eshop.IContact;
-import com.parrot.portal.domain.eshop.IName;
 
 
 /**

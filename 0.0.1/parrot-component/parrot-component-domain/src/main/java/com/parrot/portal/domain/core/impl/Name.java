@@ -2,9 +2,9 @@
  * Copyright 2007 NetCom. All rights reserved.
  **************************************************************************************************/
 
-package com.parrot.portal.domain.eshop.impl;
+package com.parrot.portal.domain.core.impl;
 
-import com.parrot.portal.domain.eshop.IName;
+import com.parrot.portal.domain.core.IName;
 
 
 /**
