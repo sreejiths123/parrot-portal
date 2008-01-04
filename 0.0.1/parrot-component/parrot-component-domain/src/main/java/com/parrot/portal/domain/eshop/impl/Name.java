@@ -4,43 +4,42 @@
 
 package com.parrot.portal.domain.eshop.impl;
 
-import com.parrot.portal.domain.eshop.IContact;
 import com.parrot.portal.domain.eshop.IName;
 
+;
 
 /**
  * @author tajzivit
  */
-public class Contact implements IContact {
+public class Name implements IName {
     
-    private int id;
-    private IName name;
+    private String firstName;
+    private String lastName;
     
     /**
      * 
      */
-    public Contact() {
+    public Name() {
         
     }
     
     /** {@inheritDoc} */
-    public int getId() {
-        return id;
+    public String getFirstName() {
+        return firstName;
     }
     
     /** {@inheritDoc} */
-    public IName getName() {
-        return name;
+    public String getLastName() {
+        return lastName;
     }
     
     /** {@inheritDoc} */
-    public void setId(int id) {
-        this.id = id;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
     
     /** {@inheritDoc} */
-    public void setName(IName name) {
-        this.name = name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
-    
 }
