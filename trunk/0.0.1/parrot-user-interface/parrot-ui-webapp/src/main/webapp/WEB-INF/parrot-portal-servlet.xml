@@ -4,12 +4,12 @@
 <beans>
 	<bean id="contactValidator" class="com.parrot.portal.domain.eshop.validator.ContactValidator"/>
     <bean id="indexForm" class="com.parrot.portal.controller.MyController">
-        <property name="sessionForm"><value>true</value></property>
-        <property name="commandName"><value>contact</value></property>
-        <property name="commandClass"><value>com.parrot.portal.domain.eshop.impl.Contact</value></property>
-        <property name="validator"><ref bean="contactValidator" /></property>
-        <property name="formView"><value>index</value></property>
-        <property name="successView"><value>success.htm</value></property>
+        <property name="sessionForm" value="true" />
+        <property name="commandName" value="contact" />
+        <property name="commandClass" value="com.parrot.portal.domain.eshop.impl.Contact" />
+        <property name="validator" ref="contactValidator" />
+        <property name="formView" value="index" />
+        <property name="successView" value="success.htm" />
     </bean>
     
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping"> 
@@ -21,15 +21,13 @@
     </bean>
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="viewClass">
-           <value>org.springframework.web.servlet.view.JstlView</value>
-        </property>
-        <property name="prefix"><value>/</value></property>
-        <property name="suffix"><value>.jsp</value></property>
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+        <property name="prefix" value="/" />
+        <property name="suffix" value=".jsp" />
     </bean>
     
     <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
-        <property name="basename"><value>messages</value></property>
+        <property name="basename" value="messages" />
     </bean>
     
 </beans>

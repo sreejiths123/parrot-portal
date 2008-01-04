@@ -11,49 +11,28 @@
 <h1>Example - Spring Application</h1>
 <p>This is my new test.</p>
 
-
-<form method="post">
-
-<spring:nestedPath path="contact">
+<spring-form:form commandName="contact">
+<spring-form:errors path="*" />
 <table>
 	<tr>
 		<td>ID:</td>
-		<td>
-		<spring:bind path="id">
-			<input type="text" name="id" value="<c:out value="${status.value}"/>" />
-			<br />
-			<font color="red"><c:out value="${status.errorMessage}"/></font>
-		</spring:bind>
-		</td>
+		<td><spring-form:input id="id" path="id" /></td>
 	</tr>
-	<spring:nestedPath path="name">
 	<tr>
 		<td>First Name:</td>
-		<td>
-		
-			<spring:bind path="firstName">
-				<input type="text" name="firstName" value="<c:out value="${status.value}"/>" />
-				<br />
-				<font color="red"><c:out value="${status.errorMessage}"/></font>
-			</spring:bind>	
-		</td>
+		<td><spring-form:input id="firstName" path="name.firstName" /></td>
 	</tr>
 	<tr>
 		<td>Last Name:</td>
-		<td>
-			<spring:bind path="lastName">
-				<input type="text" name="lastName" value="<c:out value="${status.value}"/>" />
-				<br />
-				<font color="red"><c:out value="${status.errorMessage}"/></font>
-			</spring:bind>
-		</td>
+		<td><spring-form:input id="firstName" path="name.lastName" /></td>
 	</tr>
-	</spring:nestedPath>
 	<tr>
 		<td><input type="submit" /></td>
 	</tr>
 </table>
-</spring:nestedPath>
-</form>
+
+</spring-form:form>
+
+
 </body>
 </html>

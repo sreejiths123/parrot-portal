@@ -7,6 +7,7 @@ import org.springframework.web.servlet.mvc.SimpleFormController;
 import org.springframework.web.servlet.view.RedirectView;
 
 import com.parrot.portal.domain.eshop.IContact;
+import com.parrot.portal.domain.eshop.IName;
 import com.parrot.portal.domain.eshop.impl.Contact;
 import com.parrot.portal.domain.core.impl.Name;
 
@@ -18,10 +19,11 @@ public class MyController extends SimpleFormController {
     /** {@inheritDoc} */
     @Override
     protected Object formBackingObject(HttpServletRequest request) throws Exception {
-        IContact contact = new Contact();
-        contact.setName(new Name());
-        return contact;
+        IName name = new Name();
         
+        IContact contact = new Contact();
+        contact.setName(name);
+        return contact;
     }
     
     /** {@inheritDoc} */
@@ -43,6 +45,4 @@ public class MyController extends SimpleFormController {
         System.out.println("redirecting to success.");
         return new ModelAndView(new RedirectView(getSuccessView()));
     }
-    
-
 }
