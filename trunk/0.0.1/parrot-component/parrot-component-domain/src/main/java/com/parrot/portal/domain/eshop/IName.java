@@ -4,16 +4,17 @@
 
 package com.parrot.portal.domain.eshop;
 
+
 /**
  * @author tajzivit
  */
-public interface IContact {
+public interface IName {
     
-    int getId();
+    String getFirstName();
     
-    IName getName();
+    String getLastName();
     
-    void setId(int id);
+    void setFirstName(String firstName);
     
-    void setName(IName name);
+    void setLastName(String lastName);
 }

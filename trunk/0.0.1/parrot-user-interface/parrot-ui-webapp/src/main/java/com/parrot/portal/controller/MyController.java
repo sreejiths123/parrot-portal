@@ -9,7 +9,7 @@ import org.springframework.web.servlet.view.RedirectView;
 import com.parrot.portal.domain.eshop.IContact;
 import com.parrot.portal.domain.eshop.IName;
 import com.parrot.portal.domain.eshop.impl.Contact;
-import com.parrot.portal.domain.core.impl.Name;
+import com.parrot.portal.domain.eshop.impl.Name;
 
 /**
  * @author tajzivit
