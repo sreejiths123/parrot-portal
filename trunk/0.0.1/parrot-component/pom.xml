@@ -4,12 +4,12 @@
 >
   <parent>
     <artifactId>parrot-parent</artifactId>
-    <groupId>com.parrot.eshop</groupId>
+    <groupId>com.parrot.portal</groupId>
     <version>1.0-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <version>1.0-SNAPSHOT</version>
-  <groupId>com.parrot.eshop</groupId>
+  <groupId>com.parrot.portal</groupId>
   <artifactId>component-parent</artifactId>
   <packaging>pom</packaging>
   <name>component-parent</name>
@@ -17,6 +17,7 @@
 
   <modules>
     <module>parrot-component-domain</module>
+    <module>parrot-component-security</module>
   </modules>
 
 </project>
