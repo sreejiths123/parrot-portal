@@ -2,8 +2,9 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 
 <beans>
+
 	<bean id="contactValidator" class="com.parrot.portal.domain.eshop.validator.ContactValidator"/>
-    <bean id="indexForm" class="com.parrot.portal.controller.MyController">
+    <bean id="indexForm" class="com.parrot.portal.controller.secure.MySecureController">
         <property name="sessionForm" value="true" />
         <property name="commandName" value="contact" />
         <property name="commandClass" value="com.parrot.portal.domain.eshop.impl.Contact" />
