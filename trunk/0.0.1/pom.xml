@@ -77,7 +77,8 @@
 
   <modules>
     <module>parrot-component</module>
-    <module>parrot-user-interface</module>
+    <module>parrot-web-module</module>
+    <module>parrot-web-application</module>
   </modules>
   
 </project>
