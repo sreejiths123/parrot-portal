@@ -14,7 +14,7 @@
 	<name>web-application-eshop</name>
 	<version>${version.parrot.build}</version>
 	<build>
-		<finalName>parrot</finalName>
+		<finalName>parrot-eshop</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -28,22 +28,25 @@
 						</goals>
 						<configuration>
 							<artifactItems>
+							<!-- 
 								<artifactItem>
 									<groupId>com.parrot.portal</groupId>
-									<artifactId>user-interface-base</artifactId>
+									<artifactId>web-module-base</artifactId>
 									<version>${version.parrot.build}</version>
 									<type>war</type>
 								</artifactItem>
-								<!-- 
+ 							-->
 								<artifactItem>
 									<groupId>com.parrot.portal</groupId>
-									<artifactId>user-interface-news</artifactId>
+									<artifactId>web-module-news</artifactId>
 									<version>${version.parrot.build}</version>
 									<type>war</type>
 								</artifactItem>
-								 -->
+
 							</artifactItems>
-							<outputDirectory>target/parrot</outputDirectory>
+							<outputDirectory>
+								target/parrot-eshop
+							</outputDirectory>
 							<overWrite>false</overWrite>
 						</configuration>
 					</execution>
@@ -52,7 +55,11 @@
 		</plugins>
 	</build>
 	<dependencies>
-
+		<dependency>
+			<groupId>opensymphony</groupId>
+			<artifactId>sitemesh</artifactId>
+			<version>2.2.1</version>
+		</dependency>
 	</dependencies>
 </project>
 

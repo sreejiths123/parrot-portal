@@ -19,7 +19,7 @@
 
 	<servlet-mapping>
 		<servlet-name>parrot-portal-news</servlet-name>
-		<url-pattern>/portal/news/*.html</url-pattern>
+		<url-pattern>/portal/news/*</url-pattern>
 	</servlet-mapping>
 
 	<welcome-file-list>
