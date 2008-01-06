@@ -3,15 +3,15 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<parent>
-		<artifactId>user-interface-parent</artifactId>
+		<artifactId>web-module-parent</artifactId>
 		<groupId>com.parrot.portal</groupId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.parrot.portal</groupId>
-	<artifactId>user-interface-webapp</artifactId>
+	<artifactId>web-module-news</artifactId>
 	<packaging>war</packaging>
-	<name>user-interface-webapp</name>
+	<name>web-module-news</name>
 	<version>${version.parrot.build}</version>
 	<dependencies>
 		<dependency>
@@ -28,6 +28,11 @@
 		<dependency>
 			<groupId>com.parrot.portal</groupId>
 			<artifactId>component-security</artifactId>
+			<version>${version.parrot.build}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.parrot.portal</groupId>
+			<artifactId>component-news</artifactId>
 			<version>${version.parrot.build}</version>
 		</dependency>
 		<dependency>
@@ -63,7 +68,7 @@
 				<directory>src/test/resources</directory>
 			</testResource>
 		</testResources>
-		<finalName>parrot</finalName>
+		<finalName>parrot-news</finalName>
 	</build>
 </project>
 

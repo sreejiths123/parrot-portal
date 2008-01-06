@@ -4,26 +4,19 @@
 <beans>
 
 	<bean id="contactValidator" class="com.parrot.portal.domain.eshop.validator.ContactValidator"/>
-    <bean id="indexForm" class="com.parrot.portal.controller.secure.MySecureController">
-        <property name="sessionForm" value="true" />
-        <property name="commandName" value="contact" />
-        <property name="commandClass" value="com.parrot.portal.domain.eshop.impl.Contact" />
-        <property name="validator" ref="contactValidator" />
-        <property name="formView" value="index" />
-        <property name="successView" value="success.htm" />
-    </bean>
+    <bean id="newsForm" class="com.parrot.portal.controller.NewsController" />
     
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping"> 
         <property name="mappings">
             <props>
-                <prop key="/index.html">indexForm</prop>
+                <prop key="/news.html">newsForm</prop>
             </props>
         </property>
     </bean>
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
-        <property name="prefix" value="/" />
+        <property name="prefix" value="/WEB-INF/jsp/user-interface-news/" />
         <property name="suffix" value=".jsp" />
     </bean>
     
