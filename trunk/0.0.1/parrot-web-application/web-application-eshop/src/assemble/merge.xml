@@ -1,0 +1,32 @@
+<uberwar>
+  <wars>
+    <war>com.parrot.portal:web-module-news</war>
+    <war>com.parrot.portal:web-module-base</war>
+  </wars>
+
+  <merges>
+    <merge>
+      <document>WEB-INF/web.xml</document>
+      <classname>org.codehaus.cargo.module.merge.DocumentMerger</classname>
+    </merge>
+  </merges>
+
+  <webXml>
+    <contextParams>
+      <strategy name="ChooseByName">
+        <default>
+          <strategy name="Preserve"/>
+        </default>
+        <choice name="contextConfigLocation">
+          <strategy name="NodeMerge">
+            <context-param>
+              <param-name>$left:param-name</param-name>
+              <param-value>$left:param-value $right:param-value</param-value>
+            </context-param>
+          </strategy>
+        </choice>
+      </strategy>
+    </contextParams>
+  </webXml>
+
+</uberwar>
