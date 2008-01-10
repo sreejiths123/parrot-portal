@@ -9,16 +9,58 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.parrot.portal</groupId>
-	<version>${version.parrot.build}</version>
 	<artifactId>component-news</artifactId>
 	<name>component-news</name>
-
+	<version>${version.parrot.build}</version>
+	<build>
+	<resources>
+      <resource>
+        <filtering>true</filtering>
+        <directory>src/main/resources</directory>
+      </resource>
+      <resource>
+        <filtering>true</filtering>
+        <directory>src/main/java</directory>
+        <includes>
+          <include>**/*.xml</include>
+        </includes>
+      </resource>
+    </resources>
+	
+	</build>
+	
 	<dependencies>
 		<dependency>
 			<groupId>com.parrot.portal</groupId>
 			<artifactId>component-domain</artifactId>
 			<version>${version.parrot.build}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.derby</groupId>
+			<artifactId>derby</artifactId>
+			<version>10.3.1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.3</version>
+		</dependency>
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-hibernate3</artifactId>
+			<version>2.0.2</version>
+		</dependency>
+
 	</dependencies>
 </project>
 
