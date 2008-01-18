@@ -1,5 +1,6 @@
 package com.parrot.portal.domain.user;
 
+import com.parrot.portal.domain.core.IContact;
 import com.parrot.portal.domain.core.IPersistentObject;
 
 
@@ -9,13 +10,13 @@ import com.parrot.portal.domain.core.IPersistentObject;
 public interface IUser extends IPersistentObject<Integer> {
     
     /**
-     * @return name of current user
+     * @return information about current user
      */
-    String getFirstName();
+    IContact getContact();
     
     /**
-     * @param name
-     *                name of current user
+     * @param contact
+     *                information about current user
      */
-    void setFirstName(String firstName);
+    void setContact(IContact contact);
 }

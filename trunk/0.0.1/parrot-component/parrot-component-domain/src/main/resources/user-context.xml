@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
 	
-	<import resource="aspect.xml"/>
-	 
- </beans>
+	<bean id="domain-user" class="com.parrot.portal.domain.user.impl.User" scope="prototype">
+		<property name="contact" ref="domain-contact" />
+	</bean>
+
+</beans>

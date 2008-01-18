@@ -8,25 +8,26 @@ package com.parrot.portal.domain.core;
 /**
  * @author tajzivit
  */
-public interface IName {
+public interface ICountry {
     
     /**
-     * @return user's first name
+     * @return code of country (ex. CZ for Czech Republic)
      */
-    String getFirstName();
+    String getCode();
     
     /**
-     * @return user's last name
+     * @return name of country
      */
-    String getLastName();
+    String getName();
     
     /**
-     * @param firstName
+     * @param code
+     *                of country (ex. CZ for Czech Republic)
      */
-    void setFirstName(String firstName);
+    void setCode(String code);
     
     /**
-     * @param lastName
+     * @param name
      */
-    void setLastName(String lastName);
+    void setName(String name);
 }

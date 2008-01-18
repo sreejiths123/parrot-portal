@@ -25,6 +25,9 @@ public class TestClassTest extends ParrotAbstractSpringTest {
     @Ignore("Not done!")
     public void testSomeMethod() {
                 
+        
+        testClass.anotherAnnotatiedMethodWithArg("aaa");
+        
+        testClass.anotherAnnotatiedMethod();
     }
-    
 }

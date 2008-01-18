@@ -6,42 +6,35 @@ package com.parrot.portal.domain.core.impl;
 
 import org.springframework.beans.factory.annotation.Configurable;
 
-import com.parrot.portal.domain.core.IName;
+import com.parrot.portal.domain.core.ICountry;
 
 
 /**
  * @author tajzivit
  */
-@Configurable("domain-name")
-public class Name implements IName {
+@Configurable("domain-country")
+public class Country implements ICountry {
     
-    private String firstName;
-    private String lastName;
+    private String code;
+    private String name;
     
-    /**
-     * 
-     */
-    public Name() {
-        
+    /** {@inheritDoc} */
+    public String getCode() {
+        return code;
     }
     
     /** {@inheritDoc} */
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
     }
     
     /** {@inheritDoc} */
-    public String getLastName() {
-        return lastName;
+    public void setCode(String code) {
+        this.code = code;
     }
     
     /** {@inheritDoc} */
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-    
-    /** {@inheritDoc} */
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setName(String name) {
+        this.name = name;
     }
 }

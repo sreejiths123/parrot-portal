@@ -3,28 +3,34 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd 
   http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd"
-   xmlns:aop="http://www.springframework.org/schema/aop"
->
+   xmlns:aop="http://www.springframework.org/schema/aop">
 
 	<bean id="testAspect" class="com.parrot.portal.security.controller.aop.TestAspect" />
 
 	<bean id="whoua" class="com.parrot.portal.security.controller.impl.TestClass" scope="prototype" />
 
-	<!-- aop:aspectj-autoproxy /-->
+	<aop:aspectj-autoproxy />
 	
 	<aop:config>
  
-		 <aop:pointcut id="testPointcutWithoutArgs" expression="execution(* com.parrot.portal.security.controller.impl..someMethod())" />
-		 
+		 <aop:pointcut id="testPointcutWithoutArgs" expression="execution(* com.parrot.portal.security.controller..someMethod())" />
+		 <aop:pointcut id="testPointcutWithArgs" expression="execution(* com.parrot.portal.security.controller..someMethodWithArgs(java.lang.String)) and args(command)" />
+		 <aop:pointcut id="annotPointcut" expression="@annotation(com.parrot.portal.security.controller.aop.TestAnnotation)" />
+		  
 		<aop:aspect id="test" ref="testAspect">
+			
 			<aop:before	pointcut-ref="testPointcutWithoutArgs" method="checkBefore" />
-				
+			
+			<aop:before	pointcut-ref="annotPointcut" method="checkAnnotation" />
+			
+			<aop:before pointcut-ref="testPointcutWithArgs" method="checkBeforeWithArg" />
+			
 			<aop:after pointcut-ref="testPointcutWithoutArgs" method="checkAfter" />
  
 			<aop:around pointcut-ref="testPointcutWithoutArgs" method="checkAround"/>
-			
+			 
 		</aop:aspect>
 
 	</aop:config>
-
+ 
 </beans>

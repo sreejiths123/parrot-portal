@@ -30,7 +30,10 @@ public class NewsController extends AbstractController {
 
     /** {@inheritDoc} */
     @Override
-    protected ModelAndView handleRequestInternal(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
+    public ModelAndView handleRequestInternal(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
+        
+        Object thisForm = getApplicationContext().getBean("newsController");
+        
         News news1 = new News();
         news1.setContent("content 1");
         news1.setHeadline("News 1");
@@ -42,7 +45,7 @@ public class NewsController extends AbstractController {
         IName name = new Name();
         name.setFirstName("Vitek");
         
-        author.setFirstName("Vitek");
+        author.setName(name);
         
         news1.setAuthor(author);
         
