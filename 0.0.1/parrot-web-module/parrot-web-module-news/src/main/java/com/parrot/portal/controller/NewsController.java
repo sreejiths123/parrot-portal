@@ -41,9 +41,8 @@ public class NewsController extends AbstractController {
         
         IName name = new Name();
         name.setFirstName("Vitek");
-        name.setLastName("Tajzich");
         
-        author.setName(name);
+        author.setFirstName("Vitek");
         
         news1.setAuthor(author);
         

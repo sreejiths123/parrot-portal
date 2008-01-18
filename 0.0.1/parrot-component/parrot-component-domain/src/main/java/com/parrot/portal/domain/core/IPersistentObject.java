@@ -1,17 +1,18 @@
 package com.parrot.portal.domain.core;
 
+import java.io.Serializable;
+
 
 /**
- * Base interface for persistent objects with simple identifier. Integer (autoincrement) is used for
- * distinguishing instances.
+ * Base interface for persistent objects with generic identifier.
  * 
  * @author macekpet
  */
-public interface IPersistentObject {
+public interface IPersistentObject<PK> extends Serializable {
     
     
-    int getId();
+    PK getId();
     
-    void setId(int id);
+    void setId(PK id);
     
 }

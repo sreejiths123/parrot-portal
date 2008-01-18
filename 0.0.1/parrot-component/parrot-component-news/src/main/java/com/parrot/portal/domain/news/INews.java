@@ -13,7 +13,7 @@ import com.parrot.portal.domain.user.IUser;
 /**
  * @author tajzivit
  */
-public interface INews extends IPersistentObject {
+public interface INews extends IPersistentObject<Integer> {
     
     /**
      * @return author of news
