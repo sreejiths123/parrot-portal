@@ -1,22 +1,21 @@
 package com.parrot.portal.domain.user;
 
-import com.parrot.portal.domain.core.IName;
 import com.parrot.portal.domain.core.IPersistentObject;
 
 
 /**
  * @author macekpet
  */
-public interface IUser extends IPersistentObject {
+public interface IUser extends IPersistentObject<Integer> {
     
     /**
      * @return name of current user
      */
-    IName getName();
+    String getFirstName();
     
     /**
      * @param name
      *                name of current user
      */
-    void setName(IName name);
+    void setFirstName(String firstName);
 }

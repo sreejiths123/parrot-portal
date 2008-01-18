@@ -13,7 +13,22 @@
   <properties>
     <version.parrot.build>0.0.1-SNAPSHOT</version.parrot.build>
   </properties>
-
+  <scm>
+    <connection>scm:svn:http://parrot-portal.googlecode.com/svn/trunk/0.0.1</connection>
+  </scm>
+  
+<developers>
+  <developer>
+    <id>petrmac</id>
+    <name>Petr Macek</name>
+    <email>petrmac@gmail.com</email>    
+  </developer>
+  <developer>
+    <id>v.tajzich</id>
+    <name>Vitezslav Tajzich</name>
+    <email>v.tajzich@gmail.com</email>    
+  </developer>  
+</developers>
   
   <build>
     <pluginManagement>

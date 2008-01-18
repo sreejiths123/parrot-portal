@@ -6,6 +6,7 @@ package com.parrot.portal.domain.news.impl;
 
 import java.util.Calendar;
 
+import com.parrot.portal.domain.core.impl.BasicPersistentObject;
 import com.parrot.portal.domain.news.INews;
 import com.parrot.portal.domain.user.IUser;
 
@@ -13,14 +14,13 @@ import com.parrot.portal.domain.user.IUser;
 /**
  * @author tajzivit
  */
-public class News implements INews {
+public class News extends BasicPersistentObject implements INews {
     
     private IUser author;
     private String content;
     private Calendar datePublished;
     private Calendar dateWritten;
     private String headline;
-    private int id;
     
     /** {@inheritDoc} */
     public IUser getAuthor() {
@@ -46,11 +46,7 @@ public class News implements INews {
     public String getHeadline() {
         return headline;
     }
-    
-    public int getId() {
-        return id;
-    }
-    
+   
     /** {@inheritDoc} */
     public void setAuthor(IUser author) {
         this.author = author;
@@ -76,7 +72,5 @@ public class News implements INews {
         this.headline = headline;
     }
     
-    public void setId(int id) {
-        this.id = id;
-    }
+   
 }

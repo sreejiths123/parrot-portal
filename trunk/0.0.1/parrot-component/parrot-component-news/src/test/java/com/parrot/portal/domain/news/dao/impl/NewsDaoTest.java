@@ -44,7 +44,7 @@ public class NewsDaoTest {
 	public void testCreate() {
 		// Create
         NewsDao newsDao = getNewsDao();
-        News news = new News();
+        INews news = new News();
         news.setHeadline("Headline");
         newsDao.create(news);
         assertNotNull(news.getId());

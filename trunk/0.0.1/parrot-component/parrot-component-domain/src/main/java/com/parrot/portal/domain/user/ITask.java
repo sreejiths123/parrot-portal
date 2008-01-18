@@ -6,7 +6,7 @@ import com.parrot.portal.domain.core.IPersistentObject;
 /**
  * @author macekpet
  */
-public interface ITask extends IPersistentObject {
+public interface ITask extends IPersistentObject<Integer> {
     
     IModule getModule();
     
