@@ -2,19 +2,12 @@
  * Copyright 2007 NetCom. All rights reserved.
  **************************************************************************************************/
 
-package com.parrot.portal.security.controller;
+package com.parrot.portal.domain.core;
 
 
 /**
- * @author tajzivit
+ * @author tajzivit This is parent interface for address interfaces
  */
-public interface ITestClass {
+public interface IAddress {
     
-    void anotherAnnotatiedMethod();
-    
-    void anotherAnnotatiedMethodWithArg(String arg0);
-    
-    void someMethod();
-    
-    void someMethodWithArgs(String arg0);
 }

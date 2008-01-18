@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<bean id="domain-name" class="com.parrot.portal.domain.core.impl.Name" scope="prototype" />
+	
+	<bean id="domain-country" class="com.parrot.portal.domain.core.impl.Country" scope="prototype" />
+	
+	<bean id="domain-urbanAddress" class="com.parrot.portal.domain.core.impl.UrbanAddress" scope="prototype" />
+	
+	<bean id="domain-telephone" class="com.parrot.portal.domain.core.impl.Telephone" scope="prototype" />
+	
+	<bean id="domain-contact" class="com.parrot.portal.domain.core.impl.Contact" scope="prototype" >
+		<property name="address" ref="domain-urbanAddress" />
+		<property name="name" ref="domain-name" />
+		<property name="telephone" ref="domain-telephone" />
+	</bean>
+	
+</beans>

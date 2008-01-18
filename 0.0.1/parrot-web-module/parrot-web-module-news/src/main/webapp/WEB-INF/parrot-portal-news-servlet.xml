@@ -3,13 +3,19 @@
 
 <beans>
 
-	<bean id="contactValidator" class="com.parrot.portal.domain.eshop.validator.ContactValidator"/>
-    <bean id="newsForm" class="com.parrot.portal.controller.NewsController" />
+	<import resource="aop.xml"/>
+	<import resource="aspect.xml"/>
+
+    <bean id="newsController" parent="proxyFactoryBean" >
+    	<property name="target">        	
+            <bean class="com.parrot.portal.controller.NewsController" />
+        </property>
+    </bean>
     
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping"> 
         <property name="mappings">
             <props>
-                <prop key="/news.html">newsForm</prop>
+                <prop key="/news.html">newsController</prop>
             </props>
         </property>
     </bean>

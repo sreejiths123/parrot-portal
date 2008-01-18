@@ -13,6 +13,49 @@
 	<packaging>war</packaging>
 	<name>web-module-news</name>
 	<version>${version.parrot.build}</version>
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+			<resource>
+				<directory>src/main/webapp</directory>
+			</resource>
+		</resources>
+		<testResources>
+			<testResource>
+				<directory>src/main/webapp</directory>
+			</testResource>
+			<testResource>
+				<directory>src/test/resources</directory>
+			</testResource>
+		</testResources>
+		<finalName>parrot-news</finalName>
+		<pluginManagement>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>aspectj-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+							<goal>test-compile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		</pluginManagement>
+	</build>
+
 	<dependencies>
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -50,27 +93,6 @@
 			<artifactId>spring-core</artifactId>
 			<version>2.5</version>
 		</dependency>
-		
-		
 	</dependencies>
-	<build>
-		<resources>
-			<resource>
-				<directory>src/main/resources</directory>
-			</resource>
-			<resource>
-				<directory>src/main/webapp</directory>
-			</resource>
-		</resources>
-		<testResources>
-			<testResource>
-				<directory>src/main/webapp</directory>
-			</testResource>
-			<testResource>
-				<directory>src/test/resources</directory>
-			</testResource>
-		</testResources>
-		<finalName>parrot-news</finalName>
-	</build>
 </project>
 

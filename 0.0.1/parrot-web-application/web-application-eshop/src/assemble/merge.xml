@@ -17,14 +17,12 @@
         <default>
           <strategy name="Preserve"/>
         </default>
-        <choice name="contextConfigLocation">
-          <strategy name="NodeMerge">
-            <context-param>
-              <param-name>$left:param-name</param-name>
-              <param-value>$left:param-value $right:param-value</param-value>
-            </context-param>
+        
+        <choice name="taglib">
+          <strategy name="Overwrite">
           </strategy>
         </choice>
+        
       </strategy>
     </contextParams>
   </webXml>

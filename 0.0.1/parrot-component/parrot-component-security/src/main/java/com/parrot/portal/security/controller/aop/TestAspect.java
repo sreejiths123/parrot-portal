@@ -17,6 +17,11 @@ public class TestAspect {
         System.out.println("after checking...");
     }
     
+    public void checkAnnotation() {
+        
+        System.out.println("annotation check...");
+    }
+    
     public Object checkAround(ProceedingJoinPoint pjp) throws Throwable {
         
         checkBefore();
@@ -33,8 +38,8 @@ public class TestAspect {
         System.out.println("before checking...");
     }
     
-    public void checkBefore(Object s) {
+    public void checkBeforeWithArg(Object command) {
         
-        System.out.println("before checking with arg: " + s);
+        System.out.println("before checking with arg: " + command);
     }
 }
