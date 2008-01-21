@@ -5,7 +5,7 @@
 
 <hibernate-mapping package="com.parrot.portal.domain.user.impl">
     <class name="Module">
-        <id name="id">
+        <id name="id" type="javla.lang.Integer">
             <generator class="native"></generator>
         </id>
         <property name="name"/>
