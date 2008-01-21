@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractController;
 
+import com.parrot.portal.domain.core.IContact;
 import com.parrot.portal.domain.core.IName;
 import com.parrot.portal.domain.core.impl.Name;
 import com.parrot.portal.domain.news.INews;
@@ -42,12 +43,9 @@ public class NewsController extends AbstractController {
         IUser author = new User();
         author.setId(2);
         
-        IName name = new Name();
-        name.setFirstName("Vitek");
+               
         
-        author.setName(name);
         
-        news1.setAuthor(author);
         
         List<INews> newsCollection = new Vector<INews>();
         newsCollection.add(news1);
