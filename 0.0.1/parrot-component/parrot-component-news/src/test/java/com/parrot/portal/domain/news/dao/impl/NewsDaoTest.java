@@ -25,7 +25,7 @@ public class NewsDaoTest {
 	
 	 public NewsDaoTest()
 	    {
-	        ctx = new ClassPathXmlApplicationContext("applicationContext2.xml");
+	        ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
 	    }
 	
 	@Before
