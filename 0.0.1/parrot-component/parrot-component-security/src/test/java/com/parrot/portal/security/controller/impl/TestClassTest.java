@@ -26,8 +26,6 @@ public class TestClassTest extends ParrotAbstractSpringTest {
     public void testSomeMethod() {
                 
         
-        testClass.anotherAnnotatiedMethodWithArg("aaa");
-        
-        testClass.anotherAnnotatiedMethod();
+       
     }
 }
