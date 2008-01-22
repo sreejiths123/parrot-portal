@@ -7,13 +7,9 @@
   http://www.springframework.org/schema/aop
   http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
 
-	<!-- aop:spring-configured/-->
-
-
-	<import resource="core-context.xml" />
-	<import resource="user-context.xml" />
-
 	<import resource="applicationContextProperties.xml" />
-	<import resource="domainDaoContext.xml" />
+	<import resource="newsDaoContext.xml" />
+	
+		
 
 </beans>

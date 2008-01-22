@@ -40,7 +40,7 @@
 			</props>
 		</property>
 		<property name="location"
-			value="classpath:hibernate.properties" />
+			value="classpath:newsHibernate.properties" />
 	</bean>
 
 	<!--
@@ -54,7 +54,7 @@
 			<ref local="dataSource" />
 		</property>
 		<property name="configLocation">
-			<value>classpath:hibernate.cfg.xml</value>
+			<value>classpath:newsHibernate.cfg.xml</value>
 		</property>
 		<property name="hibernateProperties">
 			<ref local="hibernateProperties" />
