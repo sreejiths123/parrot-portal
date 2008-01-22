@@ -110,5 +110,31 @@
             </bean>
         </property>
     </bean>
+    
+    <bean id="roleDao" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>com.parrot.portal.domain.user.dao.IRoleDao</value>
+        </property>
+        <property name="target">        	
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>com.parrot.portal.domain.user.impl.Role</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    
+    <bean id="taskDao" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>com.parrot.portal.domain.user.dao.ITaskDao</value>
+        </property>
+        <property name="target">        	
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>com.parrot.portal.domain.user.impl.Task</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
 
 </beans>

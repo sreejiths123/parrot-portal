@@ -8,6 +8,10 @@ import com.parrot.portal.domain.user.IModule;
  */
 public class Module extends BasicPersistentObject implements IModule {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4202454524411213428L;
 	private String name;
 
 	/** {@inheritDoc} */

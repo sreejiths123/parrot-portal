@@ -6,9 +6,13 @@ import com.parrot.portal.domain.user.ITask;
 
 public class Task extends BasicPersistentObject implements ITask {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 9032301876886242235L;
 	private IModule module;
 	private String qualifiedName;
-	
+
 	public IModule getModule() {
 		return module;
 	}
@@ -18,11 +22,11 @@ public class Task extends BasicPersistentObject implements ITask {
 	}
 
 	public void setModule(IModule module) {
-		this.module = module;		
+		this.module = module;
 	}
 
 	public void setQualifiedName(String name) {
 		this.qualifiedName = name;
-	}	
+	}
 
 }

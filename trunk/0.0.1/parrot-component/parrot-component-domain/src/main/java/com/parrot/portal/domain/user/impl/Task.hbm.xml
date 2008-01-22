@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.parrot.portal.domain.user.impl">
+	<class name="Task">
+		<id name="id" type="java.lang.Integer">
+			<generator class="native"></generator>
+		</id>
+
+		<property name="qualifiedName" />
+
+		<many-to-one name="module" class="Module" cascade="save-update" ></many-to-one>
+	</class>
+
+
+
+	<query name="Task.findByModuleName">
+		<![CDATA[select t from Task t where t.module.name = ? ]]>
+	</query>
+	
+	<query name="Task.findByModuleId">
+		<![CDATA[select t from Task t where t.module.id = ? ]]>
+	</query>
+
+</hibernate-mapping>

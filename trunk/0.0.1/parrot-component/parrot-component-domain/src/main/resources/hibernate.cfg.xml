@@ -9,6 +9,8 @@
 		<property name="dialect">org.hibernate.dialect.DerbyDialect</property>
 		<mapping resource="com/parrot/portal/domain/user/impl/Module.hbm.xml" />
 		<mapping resource="com/parrot/portal/domain/user/impl/User.hbm.xml" />
+		<mapping resource="com/parrot/portal/domain/user/impl/Role.hbm.xml" />
+		<mapping resource="com/parrot/portal/domain/user/impl/Task.hbm.xml" />
 	</session-factory>
 
 </hibernate-configuration>
