@@ -16,7 +16,11 @@ import com.parrot.portal.domain.core.IUrbanAddress;
 @Configurable("domain-urbanAddress")
 public class UrbanAddress implements IUrbanAddress {
     
-    private ICountry country;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -2681161888816869477L;
+	private ICountry country;
     private int doorNumber;
     private int floorNumber;
     private String streetName;

@@ -15,7 +15,11 @@ import com.parrot.portal.domain.core.IName;
 @Configurable("domain-name")
 public class Name implements IName {
     
-    private String firstName;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -2955401154982595504L;
+	private String firstName;
     private String lastName;
     
     /**

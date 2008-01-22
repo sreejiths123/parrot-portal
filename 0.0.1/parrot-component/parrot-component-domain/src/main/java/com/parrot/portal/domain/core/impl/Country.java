@@ -13,9 +13,13 @@ import com.parrot.portal.domain.core.ICountry;
  * @author tajzivit
  */
 @Configurable("domain-country")
-public class Country implements ICountry {
+public class Country extends BasicPersistentObject implements ICountry {
     
-    private String code;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 7931732810739687044L;
+	private String code;
     private String name;
     
     /** {@inheritDoc} */
