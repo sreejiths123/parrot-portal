@@ -1,4 +1,4 @@
-package com.parrot.portal.domain.dao.impl;
+package com.parrot.portal.domain.user.dao;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -25,11 +25,15 @@ import com.parrot.portal.domain.user.IUser;
 import com.parrot.portal.domain.user.dao.IUserDao;
 import com.parrot.portal.domain.user.impl.User;
 
+/**
+ * @author Petr
+ *
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:/applicationContext.xml"})
 @TransactionConfiguration(transactionManager="transactionManager", defaultRollback=false)
 @Transactional
-public class UserDaoTest extends AbstractTransactionalJUnit4SpringContextTests {
+public class UserDaoIntegrationTest extends AbstractTransactionalJUnit4SpringContextTests {
 	
 	private IUserDao dao;
 	

@@ -5,6 +5,10 @@ import com.parrot.portal.domain.user.IRole;
 
 public class Role extends BasicPersistentObject implements IRole {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8734971203599582474L;
 	private String name;
 	
 	
