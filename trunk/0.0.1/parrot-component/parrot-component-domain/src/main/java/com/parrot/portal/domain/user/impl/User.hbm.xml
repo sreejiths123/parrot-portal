@@ -25,6 +25,10 @@
 		</component>
 
 
+		<set name="roles" table="CON_USER2ROLE" lazy="false" inverse="false" access="field">
+			<key column="USER_ID" />
+			<many-to-many class="Role" column="ROLE_ID" />
+		</set>
 
 	</class>
 

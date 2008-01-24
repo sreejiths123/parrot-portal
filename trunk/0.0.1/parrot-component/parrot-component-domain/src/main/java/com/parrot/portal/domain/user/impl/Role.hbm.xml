@@ -9,6 +9,13 @@
 			<generator class="native"></generator>
 		</id>
 		<property name="name" />
+		
+		
+		<set name="users" table="CON_USER2ROLE" lazy="true" inverse="true" access="field">
+			<key column="ROLE_ID"/>
+			<many-to-many class="User" column="USER_ID"/>
+		</set>
+		
 	</class>
 
 </hibernate-mapping>
