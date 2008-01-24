@@ -21,55 +21,57 @@ import com.parrot.portal.domain.core.ITelephone;
 import com.parrot.portal.domain.core.impl.Contact;
 import com.parrot.portal.domain.core.impl.Name;
 import com.parrot.portal.domain.core.impl.Telephone;
+import com.parrot.portal.domain.user.IRole;
 import com.parrot.portal.domain.user.IUser;
 import com.parrot.portal.domain.user.dao.IUserDao;
+import com.parrot.portal.domain.user.impl.Role;
 import com.parrot.portal.domain.user.impl.User;
 
 /**
  * @author Petr
- *
+ * 
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations={"classpath:/applicationContext.xml"})
-@TransactionConfiguration(transactionManager="transactionManager", defaultRollback=false)
+@ContextConfiguration(locations = { "classpath:/applicationContext.xml" })
+@TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = true)
 @Transactional
-public class UserDaoIntegrationTest extends AbstractTransactionalJUnit4SpringContextTests {
-	
-	private IUserDao dao;
-	
+public class UserDaoIntegrationTest {
+
+	@Autowired
+	private IUserDao userDao;
 	
 	@Autowired
-	public void setDao(IUserDao dao) {
-		this.dao = dao;
-	}
+	private IRoleDao roleDao;
+
+	@Autowired
+	private IUser injectedUser;
+
 
 	@Test
-	@Rollback(true)
 	public void testCreate() {
-		
+
 		IUser user = new User();
 		IName name = new Name();
 		name.setFirstName("TEST");
 		name.setLastName("NAME");
 		IContact contact = new Contact();
 		contact.setName(name);
-		
+
 		ITelephone tel = new Telephone();
 		tel.setCountryPrefix("+420");
 		tel.setLocalNumber("603");
 		tel.setNumber("582433");
-		
-		contact.setTelephone(tel);		
+
+		contact.setTelephone(tel);
 		user.setContact(contact);
-		
-		dao.create(user);
-		
+
+		userDao.create(user);
+
 		assertTrue(user.getId() > 0);
-		
+
 	}
 
 	@Test
-	@Rollback(true)
 	public void testRead() {
 		IUser user = new User();
 		IName name = new Name();
@@ -77,27 +79,26 @@ public class UserDaoIntegrationTest extends AbstractTransactionalJUnit4SpringCon
 		name.setLastName("NAME");
 		IContact contact = new Contact();
 		contact.setName(name);
-		
+
 		ITelephone tel = new Telephone();
 		tel.setCountryPrefix("+420");
 		tel.setLocalNumber("603");
 		tel.setNumber("582433");
-		
-		contact.setTelephone(tel);		
+
+		contact.setTelephone(tel);
 		user.setContact(contact);
-		
-		dao.create(user);
-		
+
+		userDao.create(user);
+
 		assertTrue(user.getId() > 0);
-		
-		IUser user2 = dao.read(user.getId());
-		
+
+		IUser user2 = userDao.read(user.getId());
+
 		assertNotNull(user2);
-		
+
 	}
 
 	@Test
-	@Rollback(true)
 	public void testUpdate() {
 		IUser user = new User();
 		IName name = new Name();
@@ -105,28 +106,27 @@ public class UserDaoIntegrationTest extends AbstractTransactionalJUnit4SpringCon
 		name.setLastName("NAME");
 		IContact contact = new Contact();
 		contact.setName(name);
-		
+
 		ITelephone tel = new Telephone();
 		tel.setCountryPrefix("+420");
 		tel.setLocalNumber("603");
 		tel.setNumber("582433");
-		
-		contact.setTelephone(tel);		
+
+		contact.setTelephone(tel);
 		user.setContact(contact);
-		
-		dao.create(user);
-				
-		IUser user2 = dao.read(user.getId());
-		
+
+		userDao.create(user);
+
+		IUser user2 = userDao.read(user.getId());
+
 		user2.getContact().getName().setFirstName("New name");
-		
-		IUser user3 = dao.read(user.getId());
-		
-		assertEquals("New name", user2.getContact().getName().getFirstName());
+
+		IUser user3 = userDao.read(user.getId());
+
+		assertEquals("New name", user3.getContact().getName().getFirstName());
 	}
 
 	@Test
-	@Rollback(true)
 	public void testDelete() {
 		IUser user = new User();
 		IName name = new Name();
@@ -134,23 +134,48 @@ public class UserDaoIntegrationTest extends AbstractTransactionalJUnit4SpringCon
 		name.setLastName("NAME");
 		IContact contact = new Contact();
 		contact.setName(name);
-		
+
 		ITelephone tel = new Telephone();
 		tel.setCountryPrefix("+420");
 		tel.setLocalNumber("603");
 		tel.setNumber("582433");
-		
-		contact.setTelephone(tel);		
+
+		contact.setTelephone(tel);
 		user.setContact(contact);
-		
-		dao.create(user);
-		
-		dao.delete(user);
-		
-		IUser readUser = dao.read(user.getId());
-		
+
+		userDao.create(user);
+
+		userDao.delete(user);
+
+		IUser readUser = userDao.read(user.getId());
+
 		assertNull(readUser);
 	}
-	
-	
+
+	@Test
+	public void testAddAndLinkRole() {
+
+		IRole role = new Role();
+		role.setName("Users role");
+		
+		roleDao.create(role);
+
+		injectedUser.getContact().getName().setFirstName("Test");
+		injectedUser.getContact().getName().setLastName("Lastname");
+
+		injectedUser.addRole(role);
+
+		userDao.create(injectedUser);
+		
+		assertTrue(role.getId() > 0);
+		
+		IUser user2 = userDao.read(injectedUser.getId());
+
+		assertNotNull(user2);
+		assertTrue(user2.getRoles().size() == 1);
+
+		
+
+	}
+
 }

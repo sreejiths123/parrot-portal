@@ -3,10 +3,13 @@
  */
 package com.parrot.portal.domain.user.dao;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.fail;
+
+import java.util.List;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -113,5 +116,24 @@ public class TaskDaoIntegrationTest {
 		
 		assertNull(taskDao.read(taskRead.getId()));
 	}
+	
+	@Test
+	public void testFindByModuleId(){
+		ITask task = new Task();
+		task.setQualifiedName("test.package.ClassName");
+
+		IModule module = new Module();
+		module.setName("Module Name");
+
+		task.setModule(module);
+
+		taskDao.create(task);
+
+		int id = module.getId();
+		
+		List<ITask> foundTasks = taskDao.findByModuleId(id);
+		
+		assertEquals(task.getQualifiedName(), foundTasks.get(0).getQualifiedName());
+	}	
 
 }
