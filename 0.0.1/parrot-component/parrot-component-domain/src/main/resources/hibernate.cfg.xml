@@ -11,6 +11,7 @@
 		<mapping resource="com/parrot/portal/domain/user/impl/User.hbm.xml" />
 		<mapping resource="com/parrot/portal/domain/user/impl/Role.hbm.xml" />
 		<mapping resource="com/parrot/portal/domain/user/impl/Task.hbm.xml" />
+		<mapping resource="com/parrot/portal/domain/user/impl/TaskAccessRight.hbm.xml" />
 	</session-factory>
 
 </hibernate-configuration>

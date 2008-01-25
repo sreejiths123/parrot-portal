@@ -1,5 +1,6 @@
 package com.parrot.portal.domain.user.impl;
 
+import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -52,6 +53,6 @@ public class User extends BasicPersistentObject implements IUser {
 
 
 	public Set<IRole> getRoles() {
-		return roles;
+		return Collections.unmodifiableSet(roles);
 	}
 }
