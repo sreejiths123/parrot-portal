@@ -1,6 +1,7 @@
 package com.parrot.portal.domain.user;
 
 import com.parrot.portal.domain.core.IPersistentObject;
+import com.parrot.portal.domain.user.impl.TaskAccessRight;
 
 
 /**
@@ -9,6 +10,8 @@ import com.parrot.portal.domain.core.IPersistentObject;
 public interface ITask extends IPersistentObject<Integer> {
     
     IModule getModule();
+    
+    ITaskAccessRight getRight();
     
     /**
      * Gets the fully qualified name of the controller (full package path)
@@ -20,4 +23,6 @@ public interface ITask extends IPersistentObject<Integer> {
     void setModule(IModule module);
     
     void setQualifiedName(String name);
+    
+    void setRight(TaskAccessRight right);
 }

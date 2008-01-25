@@ -10,7 +10,9 @@
 		</id>
 
 		<property name="qualifiedName" />
-
+		
+		<one-to-one name="right" class="TaskAccessRight" cascade="all" outer-join="true"/>
+		
 		<many-to-one name="module" class="Module" cascade="save-update" ></many-to-one>
 	</class>
 
