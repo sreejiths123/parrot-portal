@@ -9,6 +9,10 @@
 		<param-value>classpath*:/applicationContext.xml</param-value>
 	</context-param>
 
+	<listener>
+    	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
 	<servlet>
 		<servlet-name>parrot-portal-news</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -17,11 +21,11 @@
 
 	<servlet-mapping>
 		<servlet-name>parrot-portal-news</servlet-name>
-		<url-pattern>/portal/news/*</url-pattern>
+		<url-pattern>*.html</url-pattern>
 	</servlet-mapping>
 
 	<welcome-file-list>
-		<welcome-file>list.html</welcome-file>
+		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
 
 	<taglib>
