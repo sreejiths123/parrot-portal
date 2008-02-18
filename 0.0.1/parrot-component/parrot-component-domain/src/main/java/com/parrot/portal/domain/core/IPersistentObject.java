@@ -11,8 +11,15 @@ import java.io.Serializable;
 public interface IPersistentObject<PK> extends Serializable {
     
     
+    /**
+     * @return primary key
+     */
     PK getId();
     
+    /**
+     * @param id
+     *                primary key
+     */
     void setId(PK id);
     
 }

@@ -3,19 +3,13 @@
 
 <beans>
 
-	<import resource="aop.xml"/>
-	<import resource="aspect.xml"/>
-
-    <bean id="newsController" parent="proxyFactoryBean" >
-    	<property name="target">        	
-            <bean class="com.parrot.portal.controller.NewsController" />
-        </property>
+    <bean id="newsController" class="com.parrot.portal.news.controller.NewsController" >
     </bean>
     
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping"> 
         <property name="mappings">
             <props>
-                <prop key="/news.html">newsController</prop>
+                <prop key="/list.html">newsController</prop>
             </props>
         </property>
     </bean>

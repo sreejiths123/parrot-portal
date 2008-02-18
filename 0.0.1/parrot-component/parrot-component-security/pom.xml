@@ -11,6 +11,11 @@
   <name>component-security</name>
   <version>${version.parrot.build}</version>
   <build>
+    <testResources>
+      <testResource>
+        <directory>src/test/resources</directory>
+      </testResource>
+    </testResources>
     <pluginManagement>
       <plugins>
         <plugin>
@@ -21,31 +26,33 @@
           </configuration>
         </plugin>
         <plugin>
-			<groupId>org.codehaus.mojo</groupId>
-			<artifactId>aspectj-maven-plugin</artifactId>
-				
-			<configuration>
-				<verbose>true</verbose>
-				<complianceLevel>1.5</complianceLevel>
-				<source>1.5</source>
-				<showWeaveInfo>true</showWeaveInfo>
-				<outxml>true</outxml>
-				<aspectLibraries>
-					<aspectLibrary>
-						<groupId>org.springframework</groupId>
-						<artifactId>spring-aspects</artifactId>
-					</aspectLibrary>
-				</aspectLibraries>
-			</configuration>
-				
-			<executions>
-				<execution>
-					<goals>
-						<goal>compile</goal>       <!-- use this goal to weave all your main classes -->
-					</goals>
-				</execution>
-			</executions>
-		</plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>aspectj-maven-plugin</artifactId>
+          <executions>
+            <execution>
+              <goals>
+                <goal>compile</goal>
+                <goal>test-compile</goal>
+              </goals>
+            </execution>
+          </executions>
+          <configuration>
+            <verbose>true</verbose>
+            <complianceLevel>1.5</complianceLevel>
+            <source>1.5</source>
+            <showWeaveInfo>true</showWeaveInfo>
+            <outxml>true</outxml>
+            <aspectLibraries>
+              <aspectLibrary>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aspects</artifactId>
+              </aspectLibrary>
+            </aspectLibraries>
+            <includes>
+              <include>**/*.java</include>
+            </includes>
+          </configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
   </build>
@@ -54,6 +61,11 @@
       <groupId>com.parrot.portal</groupId>
       <artifactId>component-domain</artifactId>
       <version>${version.parrot.build}</version>
+    </dependency>
+    <dependency>
+      <groupId>springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>1.2.6</version>
     </dependency>
   </dependencies>
 </project>

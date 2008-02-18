@@ -10,11 +10,10 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.SimpleFormController;
 import org.springframework.web.servlet.view.RedirectView;
 
-import com.parrot.portal.domain.eshop.IContact;
-import com.parrot.portal.domain.eshop.IName;
-import com.parrot.portal.domain.eshop.impl.Contact;
-import com.parrot.portal.domain.eshop.impl.Name;
-
+import com.parrot.portal.domain.core.IContact;
+import com.parrot.portal.domain.core.IName;
+import com.parrot.portal.domain.core.impl.Contact;
+import com.parrot.portal.domain.core.impl.Name;
 
 /**
  * @author tajzivit
