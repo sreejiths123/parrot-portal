@@ -1,9 +1,9 @@
 <Context 
   displayName="Parrot Portal" 
-  docBase="S:/salsa-dev/Projects/Private/parrot-portal/parrot-user-interface/parrot-ui-webapp/target/parrot">
+  docBase="S:/salsa-dev/Projects/Private/parrot-portal/parrot-web-module/parrot-web-module-base/target/web-module-base-0.0.1-SNAPSHOTH">
   
   <!-- Uncomment this to disable session persistence across Tomcat restarts -->
   <Manager pathname="" />
-  <WatchedResource>S:/salsa-dev/Projects/Private/parrot-portal/parrot-user-interface/parrot-ui-webapp/target/parrot/WEB-INF/web.xml</WatchedResource>
+  <WatchedResource>S:/salsa-dev/Projects/Private/parrot-portal/parrot-web-module/parrot-web-module-base/target/web-module-base-0.0.1-SNAPSHOTH/WEB-INF/web.xml</WatchedResource>
   
 </Context>

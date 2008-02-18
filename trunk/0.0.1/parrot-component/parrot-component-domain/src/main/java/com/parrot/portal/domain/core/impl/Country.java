@@ -4,22 +4,16 @@
 
 package com.parrot.portal.domain.core.impl;
 
-import org.springframework.beans.factory.annotation.Configurable;
-
 import com.parrot.portal.domain.core.ICountry;
 
 
 /**
  * @author tajzivit
  */
-@Configurable("domain-country")
 public class Country extends BasicPersistentObject implements ICountry {
     
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 7931732810739687044L;
-	private String code;
+    private static final long serialVersionUID = 7931732810739687044L;
+    private String code;
     private String name;
     
     /** {@inheritDoc} */

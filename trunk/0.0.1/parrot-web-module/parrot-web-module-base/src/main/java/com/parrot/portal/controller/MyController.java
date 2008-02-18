@@ -2,27 +2,33 @@ package com.parrot.portal.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.SimpleFormController;
 import org.springframework.web.servlet.view.RedirectView;
 
-import com.parrot.portal.domain.eshop.IContact;
-import com.parrot.portal.domain.eshop.IName;
-import com.parrot.portal.domain.eshop.impl.Contact;
-import com.parrot.portal.domain.eshop.impl.Name;
+import com.parrot.portal.domain.core.IContact;
 
 /**
  * @author tajzivit
  */
 public class MyController extends SimpleFormController {
     
+    @Autowired
+    private IContact contact;
+    
+    /**
+     * @param contact
+     *                the contact to set
+     */
+    public void setContact(IContact contact) {
+        this.contact = contact;
+    }
+    
     /** {@inheritDoc} */
     @Override
     protected Object formBackingObject(HttpServletRequest request) throws Exception {
-        IName name = new Name();
         
-        IContact contact = new Contact();
-        contact.setName(name);
         return contact;
     }
     

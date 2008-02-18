@@ -4,7 +4,7 @@
 
 package com.parrot.portal.domain.core.impl;
 
-import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.parrot.portal.domain.core.ICountry;
 import com.parrot.portal.domain.core.IUrbanAddress;
@@ -13,14 +13,12 @@ import com.parrot.portal.domain.core.IUrbanAddress;
 /**
  * @author tajzivit
  */
-@Configurable("domain-urbanAddress")
 public class UrbanAddress implements IUrbanAddress {
     
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = -2681161888816869477L;
-	private ICountry country;
+    private static final long serialVersionUID = -2681161888816869477L;
+    
+    @Autowired
+    private ICountry country;
     private int doorNumber;
     private int floorNumber;
     private String streetName;

@@ -4,7 +4,7 @@
 
 package com.parrot.portal.domain.core.impl;
 
-import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.parrot.portal.domain.core.IAddress;
 import com.parrot.portal.domain.core.IContact;
@@ -15,15 +15,15 @@ import com.parrot.portal.domain.core.ITelephone;
 /**
  * @author tajzivit
  */
-@Configurable("domain-contact")
-public class Contact implements  IContact {
+public class Contact implements IContact {
     
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = -974010218171182853L;
-	private IAddress address;
+    private static final long serialVersionUID = -974010218171182853L;
+    
+    @Autowired
+    private IAddress address;
+    @Autowired
     private IName name;
+    @Autowired
     private ITelephone telephone;
     
     /** {@inheritDoc} */
