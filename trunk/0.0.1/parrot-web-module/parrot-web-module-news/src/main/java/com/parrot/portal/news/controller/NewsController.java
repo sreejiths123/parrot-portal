@@ -32,6 +32,8 @@ public class NewsController extends AbstractController {
     @Override
     public ModelAndView handleRequestInternal(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
         
+        Object object = getApplicationContext().getBean("domain-user");
+        
         News news1 = new News();
         news1.setContent("content 1");
         news1.setHeadline("News 1");

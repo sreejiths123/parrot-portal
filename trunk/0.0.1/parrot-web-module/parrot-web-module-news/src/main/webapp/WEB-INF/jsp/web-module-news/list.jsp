@@ -12,7 +12,7 @@
 
 	<c:forEach items = "${newsCollection}" var="news">	
 		<tr>
-			<td><c:out value="${news.author.name.firstName}" /> <c:out value="${news.author.name.lastName}" /></td>
+			<td><c:out value="${news.author.contact.name.firstName}" /> <c:out value="${news.author.contact.name.lastName}" /></td>
 			<td><c:out value="${news.headline}" /></td>
 			<td><c:out value="${news.content}" /></td>
 		</tr>
