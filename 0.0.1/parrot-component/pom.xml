@@ -103,7 +103,7 @@
     <module>parrot-component-security</module>
     
     <!-- Put here your components / modules -->
-    <module>parrot-component-news</module>
+    <module>parrot-component-rs</module>
   </modules>
   
   <reporting>

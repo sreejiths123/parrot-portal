@@ -55,8 +55,8 @@
   </dependencies>
 
   <modules>
-    <module>parrot-web-module-news</module>
     <module>parrot-web-module-base</module>
+    <module>parrot-web-module-rs</module>
   </modules>
 
 

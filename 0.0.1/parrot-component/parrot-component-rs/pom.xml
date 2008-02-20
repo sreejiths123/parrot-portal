@@ -9,8 +9,8 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.parrot.portal</groupId>
-	<artifactId>component-news</artifactId>
-	<name>component-news</name>
+	<artifactId>component-rs</artifactId>
+	<name>component-rs</name>
 	<version>${version.parrot.build}</version>
 	<build>
 	<resources>
