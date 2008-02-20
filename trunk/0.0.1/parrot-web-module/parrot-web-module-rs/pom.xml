@@ -9,9 +9,9 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.parrot.portal</groupId>
-	<artifactId>web-module-news</artifactId>
+	<artifactId>web-module-rs</artifactId>
 	<packaging>war</packaging>
-	<name>web-module-news</name>
+	<name>web-module-rs</name>
 	<version>${version.parrot.build}</version>
 	<build>
 		<resources>
@@ -30,7 +30,6 @@
 				<directory>src/test/resources</directory>
 			</testResource>
 		</testResources>
-		<finalName>parrot-news</finalName>
 		<pluginManagement>
 		<plugins>
 			<plugin>
@@ -75,7 +74,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.parrot.portal</groupId>
-			<artifactId>component-news</artifactId>
+			<artifactId>component-rs</artifactId>
 			<version>${version.parrot.build}</version>
 		</dependency>
 		<dependency>
@@ -85,4 +84,3 @@
 		</dependency>			
 	</dependencies>
 </project>
-
