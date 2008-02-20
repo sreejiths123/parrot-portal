@@ -15,6 +15,8 @@
 
 	<import resource="core-context.xml" />
 	<import resource="user-context.xml" />
+	
+	<bean id="defaultDomainFactory" class="com.parrot.portal.domain.factory.impl.DefaultDomainFactory" />
 
 <!-- 
 	<import resource="domainDaoContext.xml" />

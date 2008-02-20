@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+    <bean id="baseListUser" class="com.parrot.portal.controller.secure.ListUserController">
+        <property name="sessionForm" value="true" />
+        <property name="commandName" value="user" />
+        <property name="commandClass" value="com.parrot.portal.domain.user.impl.User" />
+<!--         <property name="validator" ref="contactValidator" /> -->
+        <property name="formView" value="list-user" />
+    </bean>
+
+
+    <bean id="baseAddUser" class="com.parrot.portal.controller.secure.AddUserController">
+        <property name="sessionForm" value="true" />
+        <property name="commandName" value="user" />
+        <property name="commandClass" value="com.parrot.portal.domain.user.impl.User" />
+<!--         <property name="validator" ref="contactValidator" /> -->
+        <property name="formView" value="add-user" />
+        <property name="successView" value="list-user.jsp" />
+    </bean>
+    
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping"> 
+        <property name="mappings">
+            <props>
+                <prop key="/add-user.jsp">baseAddUser</prop>
+                <prop key="/list-user.jsp">baseListUser</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+        <property name="prefix" value="/WEB-INF/jsp/web-module-base/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+    
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="messages" />
+    </bean>
+    
+</beans>
