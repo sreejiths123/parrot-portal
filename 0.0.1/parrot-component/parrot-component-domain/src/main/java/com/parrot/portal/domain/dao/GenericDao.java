@@ -19,10 +19,9 @@ public interface GenericDao<T, PK extends Serializable> {
     void delete(T persistentObject);
     
     /**
-     * @param persistentObject
      * @return list of the objects
      */
-    List<T> list(T persistentObject);
+    List<T> list();
     
     /**
      * Retrieve an object that was previously persisted to the database using the indicated id as

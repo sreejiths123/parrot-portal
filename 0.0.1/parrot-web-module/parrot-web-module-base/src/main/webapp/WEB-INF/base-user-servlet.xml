@@ -3,29 +3,14 @@
 
 <beans>
 
-    <bean id="baseListUser" class="com.parrot.portal.controller.secure.ListUserController">
-        <property name="sessionForm" value="true" />
-        <property name="commandName" value="user" />
-        <property name="commandClass" value="com.parrot.portal.domain.user.impl.User" />
-<!--         <property name="validator" ref="contactValidator" /> -->
-        <property name="formView" value="list-user" />
-    </bean>
+	<import resource="userServletContext.xml" />
+	<import resource="validatorContext.xml" />
 
-
-    <bean id="baseAddUser" class="com.parrot.portal.controller.secure.AddUserController">
-        <property name="sessionForm" value="true" />
-        <property name="commandName" value="user" />
-        <property name="commandClass" value="com.parrot.portal.domain.user.impl.User" />
-<!--         <property name="validator" ref="contactValidator" /> -->
-        <property name="formView" value="add-user" />
-        <property name="successView" value="list-user.jsp" />
-    </bean>
-    
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping"> 
         <property name="mappings">
             <props>
-                <prop key="/add-user.jsp">baseAddUser</prop>
-                <prop key="/list-user.jsp">baseListUser</prop>
+                <prop key="/add-user.html">baseAddUser</prop>
+                <prop key="/list-user.html">baseListUser</prop>
             </props>
         </property>
     </bean>

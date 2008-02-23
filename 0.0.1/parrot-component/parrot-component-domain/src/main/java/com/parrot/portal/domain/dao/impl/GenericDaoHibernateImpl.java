@@ -36,6 +36,7 @@ public class GenericDaoHibernateImpl<T, PK extends Serializable> implements Gene
         this.type = type;
     }
     
+    @SuppressWarnings("unchecked")
     public PK create(T o) {
         return (PK)getSession().save(o);
     }
@@ -44,6 +45,7 @@ public class GenericDaoHibernateImpl<T, PK extends Serializable> implements Gene
         getSession().delete(o);
     }
     
+    @SuppressWarnings("unchecked")
     public List<T> executeFinder(Method method, final Object[] queryArgs) {
         final Query namedQuery = prepareQuery(method, queryArgs);
         return namedQuery.list();
@@ -68,17 +70,19 @@ public class GenericDaoHibernateImpl<T, PK extends Serializable> implements Gene
     //        return (ScrollableResults) namedQuery.scroll();
     //    }
     
+    @SuppressWarnings("unchecked")
     public Iterator<T> iterateFinder(Method method, final Object[] queryArgs) {
         final Query namedQuery = prepareQuery(method, queryArgs);
         return namedQuery.iterate();
     }
     
     /** {@inheritDoc} */
-    public List<T> list(T persistentObject) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Method 'list' not implemented!");
+    @SuppressWarnings("unchecked")
+    public List<T> list() {
+        return getSession().createCriteria(type).list();
     }
     
+    @SuppressWarnings("unchecked")
     public T read(PK id) {
         return (T)getSession().get(type, id);
     }

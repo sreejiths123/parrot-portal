@@ -14,14 +14,14 @@
 	</listener>
 
 	<servlet>
-		<servlet-name>parrot-portal-news</servlet-name>
+		<servlet-name>parrot-portal-rs</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>parrot-portal-news</servlet-name>
-		<url-pattern>*.html</url-pattern>
+		<servlet-name>parrot-portal-rs</servlet-name>
+		<url-pattern>/portal/rs/*</url-pattern>
 	</servlet-mapping>
 
 	<welcome-file-list>

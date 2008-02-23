@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+		
+	<!-- Common validators -->
+	<bean id="abstractValidator" abstract="true" class="com.parrot.portal.validator.AbstractValidator" />
+	
+	<bean id="addressValidator" parent="abstractValidator" class="com.parrot.portal.validator.AddressValidator">
+		<property name="countryValidator" ref="countryValidator" />
+	</bean>
+	
+	<bean id="contactValidator" parent="abstractValidator" class="com.parrot.portal.validator.ContactValidator">
+		<property name="addressValidator" ref="addressValidator" />
+		<property name="nameValidator" ref="nameValidator" />
+		<property name="telephoneValidator" ref="telephoneValidator" />
+	</bean>
+	
+	<bean id="countryValidator" parent="abstractValidator" class="com.parrot.portal.validator.CountryValidator" />
+	
+	<bean id="nameValidator" parent="abstractValidator" class="com.parrot.portal.validator.NameValidator" />
+	
+	<bean id="telephoneValidator" parent="abstractValidator" class="com.parrot.portal.validator.TelephoneValidator" />
+
+	<!-- Not common validators -->
+	<bean id="addUserValidator" class="com.parrot.portal.validator.AddUserValidator" >
+		<property name="nameValidator" ref="nameValidator" />
+	</bean>
+	
+</beans>
+

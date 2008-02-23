@@ -15,16 +15,13 @@
 
 	<import resource="core-context.xml" />
 	<import resource="user-context.xml" />
+	<import resource="domainDaoContext.xml" />
 	
 	<bean id="defaultDomainFactory" class="com.parrot.portal.domain.factory.impl.DefaultDomainFactory" />
 
-<!-- 
-	<import resource="domainDaoContext.xml" />
- -->
 	<!-- TODO: change load time weaver to another one for deployment -this os for testing only -->
-
 	<context:load-time-weaver weaver-class="org.springframework.instrument.classloading.SimpleLoadTimeWeaver"/>		
-<!-- 	
+
 	<bean id="baseTransactionProxy"
 		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"
 		abstract="true">
@@ -46,5 +43,4 @@
 		</property>
 	</bean>
 	
- -->
 </beans>
