@@ -1,3 +1,6 @@
+<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+<%@ taglib uri="/spring-form" prefix="spring-form" %>
+
 <spring-form:form commandName="user">
 	<spring-form:errors path="*" />
 	<table>

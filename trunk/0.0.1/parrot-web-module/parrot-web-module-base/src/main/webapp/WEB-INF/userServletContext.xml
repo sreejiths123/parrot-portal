@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<bean id="baseListUser" class="com.parrot.portal.controller.secure.user.ListUserController">
+        <property name="sessionForm" value="true" />
+        <property name="commandName" value="user" />
+        <property name="commandClass" value="com.parrot.portal.domain.user.impl.User" />
+        <property name="formView" value="user/list-user" />
+    </bean>
+
+    <bean id="baseAddUser" class="com.parrot.portal.controller.secure.user.AddUserController">
+        <property name="sessionForm" value="true" />
+        <property name="commandName" value="user" />
+        <property name="commandClass" value="com.parrot.portal.domain.user.impl.User" />
+        <property name="validator" ref="addUserValidator" />
+        <property name="formView" value="user/add-user" />
+        <property name="successView" value="list-user.html" />
+        
+        <property name="userManagementService" ref="userManagementService" />
+    </bean>
+	
+
+</beans>

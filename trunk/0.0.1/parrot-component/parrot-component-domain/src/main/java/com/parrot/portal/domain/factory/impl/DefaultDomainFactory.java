@@ -17,7 +17,7 @@ public class DefaultDomainFactory implements IDomainFactory, ApplicationContextA
     /**
      * name of the bean for this factory
      */
-    public static String BEAN_NAME = "baseDomainFactory";
+    public static String BEAN_NAME = "defaultDomainFactory";
     
     private ApplicationContext context;
     
