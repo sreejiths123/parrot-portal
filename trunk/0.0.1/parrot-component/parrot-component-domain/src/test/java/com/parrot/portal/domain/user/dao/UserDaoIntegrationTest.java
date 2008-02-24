@@ -146,7 +146,7 @@ public class UserDaoIntegrationTest {
         List<IUser> result = userDao.list();
         
         assertTrue(result.size() == 1);
-        //    assertEquals(user, result.get(0));
+        assertEquals(user, result.get(0));
     }
     
     @Test
