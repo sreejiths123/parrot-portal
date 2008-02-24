@@ -11,5 +11,11 @@
 	<bean id="domain-user" class="com.parrot.portal.domain.user.impl.User" scope="prototype">
 		<property name="contact" ref="domain-contact" />
 	</bean>
+	
+	<bean id="domain-role" class="com.parrot.portal.domain.user.impl.Role" />
+	
+	<bean id="domain-task" class="com.parrot.portal.domain.user.impl.Task" />
+	
+	<bean id="domain-module" class="com.parrot.portal.domain.user.impl.Module" />
 
 </beans>

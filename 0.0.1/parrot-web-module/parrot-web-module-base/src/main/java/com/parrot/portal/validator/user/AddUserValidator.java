@@ -1,8 +1,10 @@
-package com.parrot.portal.validator;
+package com.parrot.portal.validator.user;
 
 import org.springframework.validation.Errors;
 
 import com.parrot.portal.domain.user.IUser;
+import com.parrot.portal.validator.AbstractValidator;
+import com.parrot.portal.validator.NameValidator;
 
 
 /**

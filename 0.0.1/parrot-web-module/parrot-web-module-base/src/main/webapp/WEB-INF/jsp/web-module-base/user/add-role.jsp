@@ -2,16 +2,12 @@
 <%@ taglib uri="/spring-form" prefix="spring-form" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %> 
 
-<spring-form:form commandName="user">
+<spring-form:form commandName="role">
 	<spring-form:errors path="*" />
 	<table>
 		<tr>
-			<td><spring:message code="parrot.portal.label.first_name"/></td>
-			<td><spring-form:input id="firstName" path="contact.name.firstName" /></td>
-		</tr>
-		<tr>
-			<td><spring:message code="parrot.portal.label.last_name"/></td>
-			<td><spring-form:input id="lastName" path="contact.name.lastName" /></td>
+			<td><spring:message code="parrot.portal.label.role_name"/></td>
+			<td><spring-form:input id="name" path="name" /></td>
 		</tr>
 		<tr>
 			<td><input type="submit" value="<spring:message code="parrot.portal.label.ok"/>" /></td>

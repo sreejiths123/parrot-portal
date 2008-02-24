@@ -3,27 +3,32 @@
 <!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
 
 <web-app>
-
+	<!-- Common configuration -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath*:/applicationContext.xml</param-value>
 	</context-param>
+	
+	<listener>
+    	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<!-- /common configuration -->
 
+	<!-- base servlet -->
 	<servlet>
 		<servlet-name>base-user</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-	
-	<listener>
-    	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
 
 	<servlet-mapping>
 		<servlet-name>base-user</servlet-name>
+		<!-- This should be changed for production -->
 		<url-pattern>*.html</url-pattern>
 	</servlet-mapping>
+	<!-- /base servlet -->
 
+	<!-- Common configuration -->
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
@@ -32,17 +37,14 @@
 		<taglib-uri>/parrot</taglib-uri>
 		<taglib-location>/META-INF/parrot.tld</taglib-location>
 	</taglib>
-
 	<taglib>
 		<taglib-uri>/spring</taglib-uri>
 		<taglib-location>/META-INF/spring.tld</taglib-location>
 	</taglib>
-
 	<taglib>
 		<taglib-uri>/spring-form</taglib-uri>
 		<taglib-location>/META-INF/spring-form.tld</taglib-location>
 	</taglib>
-
 	<taglib>
 		<taglib-uri>http://java.sun.com/jstl/core</taglib-uri>
 		<taglib-location>/META-INF/c.tld</taglib-location>
