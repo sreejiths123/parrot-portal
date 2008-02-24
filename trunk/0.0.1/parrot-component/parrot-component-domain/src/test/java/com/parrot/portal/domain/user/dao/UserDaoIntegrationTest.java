@@ -126,17 +126,10 @@ public class UserDaoIntegrationTest {
         
         IUser user = new User();
         IName name = new Name();
-        name.setFirstName("TEST2");
+        name.setFirstName("TEST");
         name.setLastName("NAME");
         IContact contact = new Contact();
         contact.setName(name);
-        
-        ITelephone tel = new Telephone();
-        tel.setCountryPrefix("+420");
-        tel.setLocalNumber("603");
-        tel.setNumber("582433");
-        
-        contact.setTelephone(tel);
         user.setContact(contact);
         
         userDao.create(user);

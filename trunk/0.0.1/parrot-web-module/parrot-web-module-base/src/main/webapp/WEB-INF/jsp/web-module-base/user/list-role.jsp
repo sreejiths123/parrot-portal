@@ -10,14 +10,14 @@
 		<th><spring:message code="parrot.portal.label.role_name"/></th>
 	</tr>
 
-<c:forEach items="${list}" var="user">
+<c:forEach items="${list}" var="role">
 
 	<tr>
-		<td><c:out value="${user.id}"/></td>
-  		<td><c:out value="${user.contact.name.firstName}"/></td>
-  		<td><c:out value="${user.contact.name.lastName}"/></td>
+		<td><c:out value="${role.id}"/></td>
+  		<td><c:out value="${role.name}"/></td>
 	</tr>  
 
 </c:forEach>
 
 </table>
+ 

@@ -6,6 +6,8 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,75 +23,89 @@ import com.parrot.portal.domain.user.impl.Role;
 
 /**
  * @author Petr
- *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations={"classpath:/applicationContext.xml"})
-@TransactionConfiguration(transactionManager="transactionManager", defaultRollback=true)
+@ContextConfiguration(locations = { "classpath:/applicationContext.xml" })
+@TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = true)
 @Transactional
 public class RoleDaoIntegrationTest {
-	
-	private IRoleDao roleDao;
-	
-	
-	
-	@Autowired
-	public void setRoleDao(IRoleDao roleDao) {
-		this.roleDao = roleDao;
-	}
+    
+    private IRoleDao roleDao;
+    
+    
 
-	@Test
-	public void testCreate() {
-		IRole role = new Role();
-		role.setName("test Role");
-		
-		roleDao.create(role);
-		
-		assertTrue(role.getId() > 0);
-	}
+    @Autowired
+    public void setRoleDao(IRoleDao roleDao) {
+        this.roleDao = roleDao;
+    }
+    
+    @Test
+    public void testCreate() {
+        IRole role = new Role();
+        role.setName("test Role");
+        
+        roleDao.create(role);
+        
+        assertTrue(role.getId() > 0);
+    }
+    
+    @Test
+    public void testDelete() {
+        IRole role = new Role();
+        role.setName("test Role");
+        
+        roleDao.create(role);
+        assertTrue(role.getId() > 0);
+        
+        roleDao.delete(role);
+        
 
-	@Test
-	public void testRead() {
-		IRole role = new Role();
-		role.setName("test Role");
-		
-		roleDao.create(role);
-		
-		IRole roleRead = roleDao.read(role.getId());
-		assertNotNull(roleRead);
-	}
-
-	@Test
-	public void testUpdate() {
-		IRole role = new Role();
-		role.setName("test Role");
-		
-		roleDao.create(role);
-		
-		IRole roleRead = roleDao.read(role.getId());
-
-		roleRead.setName("changed name");
-		
-		roleDao.update(roleRead);
-		
-		IRole roleReRead = roleDao.read(roleRead.getId());
-		
-		assertEquals("changed name", roleReRead.getName());
-	}
-
-	@Test
-	public void testDelete() {
-		IRole role = new Role();
-		role.setName("test Role");
-		
-		roleDao.create(role);
-		assertTrue(role.getId() > 0);
-		
-		roleDao.delete(role);
-		
-		
-		IRole roleRead = roleDao.read(role.getId());
-		assertNull(roleRead);
-	}
-
+        IRole roleRead = roleDao.read(role.getId());
+        assertNull(roleRead);
+    }
+    
+    @Test
+    public void testList() {
+        
+        IRole role = new Role();
+        role.setName("test Role");
+        
+        roleDao.create(role);
+        assertTrue(role.getId() > 0);
+        
+        List<IRole> result = roleDao.list();
+        
+        assertTrue(result.size() == 1);
+        assertEquals(role, result.get(0));
+    }
+    
+    @Test
+    public void testRead() {
+        IRole role = new Role();
+        role.setName("test Role");
+        
+        roleDao.create(role);
+        
+        IRole roleRead = roleDao.read(role.getId());
+        assertNotNull(roleRead);
+    }
+    
+    @Test
+    public void testUpdate() {
+        IRole role = new Role();
+        role.setName("test Role");
+        
+        roleDao.create(role);
+        
+        IRole roleRead = roleDao.read(role.getId());
+        
+        roleRead.setName("changed name");
+        
+        roleDao.update(roleRead);
+        
+        IRole roleReRead = roleDao.read(roleRead.getId());
+        
+        assertEquals("changed name", roleReRead.getName());
+    }
+    
 }

@@ -38,7 +38,11 @@
 	
 	<bean id="userManagementService" parent="baseTransactionProxy">
 		<property name="target">
-			<bean class="com.parrot.portal.domain.user.service.impl.UserManagementService">											
+			<bean class="com.parrot.portal.domain.user.service.impl.UserManagementService">
+				<property name="moduleDao" ref="moduleDao" />
+				<property name="roleDao" ref="roleDao" />
+				<property name="taskDao" ref="taskDao" />
+				<property name="userDao" ref="userDao" />
 			</bean>
 		</property>
 	</bean>

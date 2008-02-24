@@ -8,14 +8,14 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.parrot.portal.controller.AbstractParrotController;
-import com.parrot.portal.domain.user.IUser;
+import com.parrot.portal.domain.user.IRole;
 import com.parrot.portal.domain.user.service.IUserManagementService;
 
 
 /**
  * @author tajzivit
  */
-public class ListUserController extends AbstractParrotController {
+public class ListRoleController extends AbstractParrotController {
     
     private IUserManagementService userManagementService;
     
@@ -29,10 +29,12 @@ public class ListUserController extends AbstractParrotController {
     
     /** {@inheritDoc} */
     @Override
-    protected ModelAndView handleRequestInternal(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
+    protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response)
+            throws Exception {
         
-        List<IUser> users = userManagementService.list();
+
+        List<IRole> roles = userManagementService.listRole();
         
-        return new ModelAndView(viewName, modelName, users);
+        return new ModelAndView(viewName, modelName, roles);
     }
 }

@@ -3,14 +3,16 @@
 
 <beans>
 
+	<!-- User -->
 	<bean id="baseListUser" class="com.parrot.portal.controller.secure.user.ListUserController">
-        <property name="sessionForm" value="true" />
-        <property name="commandName" value="user" />
-        <property name="commandClass" value="com.parrot.portal.domain.user.impl.User" />
-        <property name="formView" value="user/list-user" />
+        <property name="viewName" value="user/list-user" />
+    	<property name="modelName" value="list" />
+    	<property name="requireSession" value="true" />
+    
+    	<property name="userManagementService" ref="userManagementService" />
     </bean>
 
-    <bean id="baseAddUser" class="com.parrot.portal.controller.secure.user.AddUserController">
+    <bean id="baseAddUser" class="com.parrot.portal.controller.secure.user.AddUserController" parent="abstractSimpleFormController">
         <property name="sessionForm" value="true" />
         <property name="commandName" value="user" />
         <property name="commandClass" value="com.parrot.portal.domain.user.impl.User" />
@@ -20,6 +22,25 @@
         
         <property name="userManagementService" ref="userManagementService" />
     </bean>
-	
+    
+    <!-- Role -->
+    <bean id="baseAddRole" class="com.parrot.portal.controller.secure.user.AddRoleController" parent="abstractSimpleFormController">
+        <property name="sessionForm" value="true" />
+        <property name="commandName" value="role" />
+        <property name="commandClass" value="com.parrot.portal.domain.user.impl.Role" />
+        <property name="validator" ref="roleValidator" />
+        <property name="formView" value="user/add-role" />
+        <property name="successView" value="list-role.html" />
+        
+        <property name="userManagementService" ref="userManagementService" />
+    </bean>
+    
+    <bean id="baseListRole" class="com.parrot.portal.controller.secure.user.ListRoleController" >
+    	<property name="viewName" value="user/list-role" />
+    	<property name="modelName" value="list" />
+    	<property name="requireSession" value="false" />
+    
+    	<property name="userManagementService" ref="userManagementService" />
+    </bean>
 
 </beans>
