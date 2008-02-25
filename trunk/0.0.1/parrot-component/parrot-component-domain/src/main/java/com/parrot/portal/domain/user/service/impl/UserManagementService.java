@@ -79,6 +79,16 @@ public class UserManagementService implements IUserManagementService {
         return roleDao.list();
     }
     
+    /** {@inheritDoc} */
+    public void remove(IRole role) {
+        roleDao.delete(role);
+    }
+    
+    /** {@inheritDoc} */
+    public void remove(IUser user) {
+        userDao.delete(user);
+    }
+    
     public void setModuleDao(IModuleDao moduleDao) {
         this.moduleDao = moduleDao;
     }
@@ -93,5 +103,15 @@ public class UserManagementService implements IUserManagementService {
     
     public void setUserDao(IUserDao userDao) {
         this.userDao = userDao;
+    }
+    
+    /** {@inheritDoc} */
+    public void update(IRole role) {
+        roleDao.update(role);
+    }
+    
+    /** {@inheritDoc} */
+    public void update(IUser user) {
+        userDao.update(user);
     }
 }

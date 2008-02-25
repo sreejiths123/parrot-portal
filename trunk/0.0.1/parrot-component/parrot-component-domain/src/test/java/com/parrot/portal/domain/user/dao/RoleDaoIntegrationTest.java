@@ -57,9 +57,16 @@ public class RoleDaoIntegrationTest {
         roleDao.create(role);
         assertTrue(role.getId() > 0);
         
+        List<IRole> roles = roleDao.list();
+        
+        assertTrue(roles.size() == 1);
+        
         roleDao.delete(role);
         
-
+        roles = roleDao.list();
+        
+        assertTrue(roles.size() == 0);
+        
         IRole roleRead = roleDao.read(role.getId());
         assertNull(roleRead);
     }

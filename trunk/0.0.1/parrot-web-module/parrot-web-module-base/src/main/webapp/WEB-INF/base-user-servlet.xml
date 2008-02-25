@@ -5,6 +5,7 @@
 
 	<import resource="userServletContext.xml" />
 	<import resource="validatorContext.xml" />
+	<import resource="commandContext.xml" />
 
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping"> 
         <property name="mappings">
@@ -13,6 +14,7 @@
                 <prop key="/list-user.html">baseListUser</prop>
                 <prop key="/add-role.html">baseAddRole</prop>
                 <prop key="/list-role.html">baseListRole</prop>
+                <prop key="/modify-role.html">baseModifyRole</prop>
             </props>
         </property>
     </bean>

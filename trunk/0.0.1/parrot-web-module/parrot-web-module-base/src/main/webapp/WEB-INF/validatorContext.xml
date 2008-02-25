@@ -25,6 +25,8 @@
 	<bean id="telephoneValidator" parent="abstractValidator" class="com.parrot.portal.validator.TelephoneValidator" />
 
 	<bean id="roleValidator" parent="abstractValidator" class="com.parrot.portal.validator.RoleValidator" />
+	
+	<bean id="defaultCommandValidator" class="com.parrot.portal.validator.DefaultCommandValidator" />
 
 	<!-- Not common validators -->
 	<bean id="addUserValidator" class="com.parrot.portal.validator.user.AddUserValidator" >

@@ -42,5 +42,16 @@
     
     	<property name="userManagementService" ref="userManagementService" />
     </bean>
+    
+    <bean id="baseModifyRole" class="com.parrot.portal.controller.secure.user.ModifyRoleController">
+    	<property name="successView" value="list-role.html" />
+    	<property name="editView" value="user/edit-role" />
+    	<property name="commandClass" value="com.parrot.portal.controller.command.user.impl.ModifyRoleCommand" />
+    	<property name="commandName" value="roleCommand" />
+    	<property name="validator" ref="defaultCommandValidator" />
+    	
+    	<property name="domainFactory" ref="defaultDomainFactory" />
+    	<property name="userManagementService" ref="userManagementService" />
+    </bean>
 
 </beans>

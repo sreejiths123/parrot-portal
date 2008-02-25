@@ -46,4 +46,12 @@ public interface IUserManagementService {
     List<IModule> listModule();
     
     List<IRole> listRole();
+    
+    void remove(IRole role);
+    
+    void remove(IUser user);
+    
+    void update(IRole role);
+    
+    void update(IUser user);
 }
