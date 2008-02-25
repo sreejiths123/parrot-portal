@@ -11,6 +11,16 @@ package com.parrot.portal.domain.core;
 public interface IUrbanAddress extends IAddress {
     
     /**
+     * @return
+     */
+    String getAreaCode();
+    
+    /**
+     * @return city
+     */
+    String getCity();
+    
+    /**
      * @return country of user
      */
     ICountry getCountry();
@@ -26,6 +36,11 @@ public interface IUrbanAddress extends IAddress {
     int getFloorNumber();
     
     /**
+     * @return
+     */
+    String getRegion();
+    
+    /**
      * @return name of street
      */
     String getStreetName();
@@ -36,6 +51,16 @@ public interface IUrbanAddress extends IAddress {
     int getStreetNumber();
     
     /**
+     * @param code
+     */
+    void setAreaCode(String code);
+    
+    /**
+     * @param city
+     */
+    void setCity(String city);
+    
+    /**
      * @param country
      */
     void setCountry(ICountry country);
@@ -44,6 +69,11 @@ public interface IUrbanAddress extends IAddress {
      * @param number
      */
     void setFloorNumber(int number);
+    
+    /**
+     * @param region
+     */
+    void setRegion(String region);
     
     /**
      * @param name
