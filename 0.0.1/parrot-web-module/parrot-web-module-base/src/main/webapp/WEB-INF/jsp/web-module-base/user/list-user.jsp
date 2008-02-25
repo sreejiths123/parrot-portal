@@ -13,12 +13,24 @@
 
 <parrot:collection collection="${list}" />
 
-<c:forEach items="${list}" var="user">
+<c:forEach items="${list}" var="user" varStatus="status">
 
 	<tr>
 		<td><c:out value="${user.id}"/></td>
   		<td><c:out value="${user.contact.name.firstName}"/></td>
   		<td><c:out value="${user.contact.name.lastName}"/></td>
+  		<td>
+	  		<parrot:link type="SHOW_EDIT" idInCollection="${status.index}">
+  				<parrot:text><spring:message code="parrot.portal.label.edit" /></parrot:text>
+  				<parrot:url><c:url value="/modify-user.html" /></parrot:url>
+  			</parrot:link>
+  		</td>
+  		<td>
+	  		<parrot:link type="REMOVE" idInCollection="${status.index}">
+  				<parrot:text><spring:message code="parrot.portal.label.delete" /></parrot:text>
+  				<parrot:url><c:url value="/modify-user.html" /></parrot:url>
+  			</parrot:link>
+  		</td>
 	</tr>  
 
 </c:forEach>
