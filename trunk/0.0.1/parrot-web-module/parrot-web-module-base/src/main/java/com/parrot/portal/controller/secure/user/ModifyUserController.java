@@ -2,28 +2,30 @@ package com.parrot.portal.controller.secure.user;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.parrot.portal.controller.command.user.impl.ModifyRoleCommand;
+import com.parrot.portal.controller.command.user.impl.ModifyUserCommand;
 import com.parrot.portal.domain.factory.IDomainFactory;
-import com.parrot.portal.domain.user.IRole;
+import com.parrot.portal.domain.user.IUser;
 import com.parrot.portal.domain.user.service.IUserManagementService;
 
 
 /**
  * @author tajzivit
  */
-public class ModifyRoleController extends AbstractModifyController<IRole> {
+public class ModifyUserController extends AbstractModifyController<IUser> {
     
     private IDomainFactory domainFactory;
     private IUserManagementService userManagementService;
     
+    /** {@inheritDoc} */
     @Override
-    public void doRemove(IRole role) {
-        userManagementService.remove(role);
+    public void doRemove(IUser user) {
+        userManagementService.remove(user);
     }
     
+    /** {@inheritDoc} */
     @Override
-    public void doUpdate(IRole role) {
-        userManagementService.update(role);
+    public void doUpdate(IUser user) {
+        userManagementService.update(user);
     }
     
     /**
@@ -45,6 +47,6 @@ public class ModifyRoleController extends AbstractModifyController<IRole> {
     /** {@inheritDoc} */
     @Override
     protected Object getCommand(HttpServletRequest request) throws Exception {
-        return new ModifyRoleCommand(domainFactory);
+        return new ModifyUserCommand(domainFactory);
     }
 }

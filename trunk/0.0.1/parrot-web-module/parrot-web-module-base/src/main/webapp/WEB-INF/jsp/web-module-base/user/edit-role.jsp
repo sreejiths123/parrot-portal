@@ -12,7 +12,7 @@
 			<td><spring-form:input id="name" path="command.name" /></td>
 		</tr>
 		<tr>
-			<td><input type="submit" value="<spring:message code="parrot.portal.label.ok"/>" /></td>
+			<td><input type="submit" value="<spring:message code="parrot.portal.label.save"/>" /></td>
 		</tr>
 	</table>
 

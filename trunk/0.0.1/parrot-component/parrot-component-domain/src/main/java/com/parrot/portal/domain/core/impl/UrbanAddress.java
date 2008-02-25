@@ -84,6 +84,11 @@ public class UrbanAddress implements IUrbanAddress {
     }
     
     /** {@inheritDoc} */
+    public void setDoorNumber(int number) {
+        this.doorNumber = number;
+    }
+    
+    /** {@inheritDoc} */
     public void setFloorNumber(int number) {
         this.floorNumber = number;
     }

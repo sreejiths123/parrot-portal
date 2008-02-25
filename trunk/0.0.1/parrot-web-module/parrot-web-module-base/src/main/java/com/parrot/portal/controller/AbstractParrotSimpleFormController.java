@@ -13,11 +13,18 @@ public abstract class AbstractParrotSimpleFormController extends SimpleFormContr
     private IDomainFactory domainFactory;
     
     
+    /**
+     * @return domain factory
+     */
     public IDomainFactory getDomainFactory() {
         return domainFactory;
     }
     
     
+    /**
+     * @param domainFactory
+     *                to be set
+     */
     public void setDomainFactory(IDomainFactory domainFactory) {
         this.domainFactory = domainFactory;
     }

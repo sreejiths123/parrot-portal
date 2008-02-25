@@ -10,6 +10,8 @@
 		</id>
 		<component name="contact"
 			class="com.parrot.portal.domain.core.impl.Contact">
+			<property name="email"></property>
+			
 			<component name="name"
 				class="com.parrot.portal.domain.core.impl.Name">
 				<property name="firstName"></property>
@@ -21,7 +23,23 @@
 				<property name="localNumber"></property>
 				<property name="number"></property>
 			</component>
-
+			<component name="address"
+				class="com.parrot.portal.domain.core.impl.UrbanAddress">
+				<property name="areaCode"></property>
+				<property name="city"></property>
+				<property name="doorNumber"></property>
+				<property name="floorNumber"></property>
+				<property name="region"></property>
+				<property name="streetName"></property>
+				<property name="streetNumber"></property>
+				
+				<component name="country"
+					class="com.parrot.portal.domain.core.impl.Country">
+					<property name="code"></property>
+					<property name="name"></property>
+				</component>
+			</component>
+			
 		</component>
 
 

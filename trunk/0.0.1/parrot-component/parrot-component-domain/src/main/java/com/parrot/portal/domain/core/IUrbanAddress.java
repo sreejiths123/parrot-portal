@@ -65,6 +65,12 @@ public interface IUrbanAddress extends IAddress {
      */
     void setCountry(ICountry country);
     
+    
+    /**
+     * @param number
+     */
+    void setDoorNumber(int number);
+    
     /**
      * @param number
      */
