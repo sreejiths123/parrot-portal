@@ -16,6 +16,11 @@ public interface IContact {
     IAddress getAddress();
     
     /**
+     * @return email
+     */
+    String getEmail();
+    
+    /**
      * @return user's name
      */
     IName getName();
@@ -29,6 +34,12 @@ public interface IContact {
      * @param address
      */
     void setAddress(IAddress address);
+    
+    /**
+     * @param email
+     *                of the user
+     */
+    void setEmail(String email);
     
     /**
      * @param name

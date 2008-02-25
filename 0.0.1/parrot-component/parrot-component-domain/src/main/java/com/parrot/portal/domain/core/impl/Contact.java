@@ -21,6 +21,7 @@ public class Contact implements IContact {
     
     @Autowired
     private IAddress address;
+    private String email;
     @Autowired
     private IName name;
     @Autowired
@@ -29,6 +30,11 @@ public class Contact implements IContact {
     /** {@inheritDoc} */
     public IAddress getAddress() {
         return address;
+    }
+    
+    /** {@inheritDoc} */
+    public String getEmail() {
+        return email;
     }
     
     /** {@inheritDoc} */
@@ -44,6 +50,11 @@ public class Contact implements IContact {
     /** {@inheritDoc} */
     public void setAddress(IAddress address) {
         this.address = address;
+    }
+    
+    /** {@inheritDoc} */
+    public void setEmail(String email) {
+        this.email = email;
     }
     
     /** {@inheritDoc} */

@@ -17,13 +17,26 @@ public class UrbanAddress implements IUrbanAddress {
     
     private static final long serialVersionUID = -2681161888816869477L;
     
+    private String areaCode;
+    private String city;
     @Autowired
     private ICountry country;
     private int doorNumber;
     private int floorNumber;
+    private String region;
     private String streetName;
     private int streetNumber;
     
+    
+    /** {@inheritDoc} */
+    public String getAreaCode() {
+        return areaCode;
+    }
+    
+    /** {@inheritDoc} */
+    public String getCity() {
+        return city;
+    }
     
     /** {@inheritDoc} */
     public ICountry getCountry() {
@@ -41,6 +54,11 @@ public class UrbanAddress implements IUrbanAddress {
     }
     
     /** {@inheritDoc} */
+    public String getRegion() {
+        return region;
+    }
+    
+    /** {@inheritDoc} */
     public String getStreetName() {
         return streetName;
     }
@@ -51,6 +69,16 @@ public class UrbanAddress implements IUrbanAddress {
     }
     
     /** {@inheritDoc} */
+    public void setAreaCode(String code) {
+        this.areaCode = code;
+    }
+    
+    /** {@inheritDoc} */
+    public void setCity(String city) {
+        this.city = city;
+    }
+    
+    /** {@inheritDoc} */
     public void setCountry(ICountry country) {
         this.country = country;
     }
@@ -58,6 +86,11 @@ public class UrbanAddress implements IUrbanAddress {
     /** {@inheritDoc} */
     public void setFloorNumber(int number) {
         this.floorNumber = number;
+    }
+    
+    /** {@inheritDoc} */
+    public void setRegion(String region) {
+        this.region = region;
     }
     
     /** {@inheritDoc} */
