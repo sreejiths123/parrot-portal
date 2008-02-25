@@ -94,6 +94,7 @@
   </dependencies>
 
   <modules>
+	<module>parrot-dao</module>
     <module>parrot-component-domain</module>
     <module>parrot-component-security</module>
     

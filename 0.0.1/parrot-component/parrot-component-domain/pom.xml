@@ -80,6 +80,11 @@
 	</build>
 	<dependencies>
 		<dependency>
+			<groupId>com.parrot</groupId>
+			<artifactId>parrot-dao</artifactId>
+			<version>${version.parrot.build}</version>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-hibernate3</artifactId>
 			<version>2.0.2</version>

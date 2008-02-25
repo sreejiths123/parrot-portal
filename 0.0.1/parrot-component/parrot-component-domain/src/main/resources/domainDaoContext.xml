@@ -61,14 +61,14 @@
 	</bean>
 
 	<bean id="extendedFinderNamingStrategy"
-		class="com.parrot.portal.domain.dao.finder.impl.ExtendedFinderNamingStrategy" />
+		class="com.parrot.dao.finder.impl.ExtendedFinderNamingStrategy" />
 
 	<!--  Dao Layer generic config-->
 	<bean id="finderIntroductionAdvisor"
-		class="com.parrot.portal.domain.dao.finder.impl.FinderIntroductionAdvisor" />
+		class="com.parrot.dao.finder.impl.FinderIntroductionAdvisor" />
 
 	<bean id="abstractDaoTarget"
-		class="com.parrot.portal.domain.dao.impl.GenericDaoHibernateImpl"
+		class="com.parrot.dao.impl.GenericDaoHibernateImpl"
 		abstract="true">
 		<property name="sessionFactory" ref="sessionFactory" />			
 		<property name="namingStrategy" ref="extendedFinderNamingStrategy" />			
