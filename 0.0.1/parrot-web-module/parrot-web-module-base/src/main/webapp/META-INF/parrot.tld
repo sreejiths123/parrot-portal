@@ -9,21 +9,51 @@
 	<description>Base tag library for Parrot portal</description>
 
 	<tag>
-		<name>application</name>
-		<tag-class>com.parrot.portal.taglib.ApplicationTag</tag-class>
+		<name>url</name>
+		<tag-class>com.parrot.portal.taglib.UrlTag</tag-class>
 		<body-content>JSP</body-content>
-		<description>This tag allows you to load another application and show it's window</description>
+		<description>This tag draws wanted link with all spring related parts.</description>
+	</tag>
+	
+	<tag>
+		<name>text</name>
+		<tag-class>com.parrot.portal.taglib.TextTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>This tag draws wanted link with all spring related parts.</description>
+	</tag>
+
+	<tag>
+		<name>collection</name>
+		<tag-class>com.parrot.portal.taglib.CollectionTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>This tag stores collection into session context.</description>
+		
 		<attribute>
-			<name>id</name>
+			<name>collection</name>
 			<required>true</required>
 			<rtexprvalue>true</rtexprvalue>
-			<description>Id of application</description>
+			<description>collection to be set into session context</description>
+		</attribute>
+		
+	</tag>
+
+	<tag>
+		<name>link</name>
+		<tag-class>com.parrot.portal.taglib.LinkTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>This tag draws wanted link with all spring related parts.</description>
+		
+		<attribute>
+			<name>idInCollection</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>id of object in collection</description>
 		</attribute>
 		<attribute>
-			<name>window</name>
+			<name>type</name>
 			<required>true</required>
-			<rtexprvalue>true</rtexprvalue>
-			<description>window of application</description>
+			<rtexprvalue>false</rtexprvalue>
+			<description>command type</description>
 		</attribute>
 	</tag>
 

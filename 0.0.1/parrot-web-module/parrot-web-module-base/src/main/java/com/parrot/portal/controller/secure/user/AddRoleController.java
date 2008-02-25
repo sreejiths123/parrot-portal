@@ -7,7 +7,6 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import com.parrot.portal.controller.AbstractParrotSimpleFormController;
 import com.parrot.portal.domain.user.IRole;
-import com.parrot.portal.domain.user.IUser;
 import com.parrot.portal.domain.user.service.IUserManagementService;
 
 
