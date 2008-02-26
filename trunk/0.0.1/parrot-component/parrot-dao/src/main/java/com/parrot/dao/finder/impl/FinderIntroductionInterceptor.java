@@ -17,7 +17,7 @@ public class FinderIntroductionInterceptor implements IntroductionInterceptor {
 		FinderExecutor executor = (FinderExecutor) methodInvocation.getThis();
 
 		String methodName = methodInvocation.getMethod().getName();
-		if (methodName.startsWith("find") || methodName.startsWith("list")) {
+		if (methodName.startsWith("find")) {
 			Object[] arguments = methodInvocation.getArguments();
 			return executor.executeFinder(methodInvocation.getMethod(),
 					arguments);
