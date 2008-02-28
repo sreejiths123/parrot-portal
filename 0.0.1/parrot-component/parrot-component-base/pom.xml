@@ -9,9 +9,10 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.parrot.portal</groupId>
-	<artifactId>component-rs</artifactId>
-	<name>component-rs</name>
+	<artifactId>component-base</artifactId>
+	<name>component-base</name>
 	<version>${version.parrot.build}</version>
+
 	<build>
 		<pluginManagement>
 			<plugins>
@@ -76,14 +77,53 @@
 				</includes>
 			</resource>
 		</resources>
-	</build>	
+	</build>
 	<dependencies>
+		<dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jsp-api</artifactId>
+      <version>2.0</version>
+    </dependency>
+    <dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${version.spring}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${version.spring}</version>
+		</dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>${version.spring}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>${version.spring}</version>
+    </dependency>    
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>servlet-api</artifactId>
+        <version>2.5</version>
+        <scope>provided</scope>
+    </dependency>
 		<dependency>
 			<groupId>com.parrot.portal</groupId>
 			<artifactId>component-domain</artifactId>
 			<version>${version.parrot.build}</version>
-		</dependency>		
-
+		</dependency>
+		<dependency>
+			<groupId>com.parrot.portal</groupId>
+			<artifactId>component-security</artifactId>
+			<version>${version.parrot.build}</version>
+		</dependency>
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>1.1.2</version>
+		</dependency>
 	</dependencies>
 </project>
-

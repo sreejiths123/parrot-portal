@@ -94,9 +94,10 @@
   </dependencies>
 
   <modules>
-	<module>parrot-dao</module>
+	  <module>parrot-dao</module>
     <module>parrot-component-domain</module>
     <module>parrot-component-security</module>
+    <module>parrot-component-base</module>
     
     <!-- Put here your components / modules -->
     <module>parrot-component-rs</module>

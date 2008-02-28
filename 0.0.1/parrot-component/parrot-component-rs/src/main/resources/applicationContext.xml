@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+  http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+  http://www.springframework.org/schema/aop
+  http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+  http://www.springframework.org/schema/context 
+  http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<import resource="rsDaoContext.xml" />
+	
+	<!-- TODO: change load time weaver to another one for deployment -this os for testing only -->
+	<context:load-time-weaver weaver-class="org.springframework.instrument.classloading.SimpleLoadTimeWeaver"/>		
+
+	<bean id="rs-service" class="com.parrot.portal.rs.service.impl.RsService">
+		<property name="articleDao" ref="rs-articleDao" />
+		<property name="categoryDao" ref="rs-categoryDao" />
+	</bean>
+
+	<bean id="rs-article" class="com.parrot.portal.rs.domain.impl.Article" scope="prototype"  >
+		<property name="approver" ref="domain-user" />
+		<property name="author" ref="domain-user" />
+		<property name="category" ref="rs-category" />
+	</bean>
+	
+	<bean id="rs-category" class="com.parrot.portal.rs.domain.impl.Category" scope="prototype" >
+		<property name="parent" ref="rs-category" />
+	</bean>	
+</beans>
