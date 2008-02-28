@@ -9,7 +9,7 @@
 	<table>
 		<tr>
 			<td><spring:message code="parrot.portal.label.role_name"/></td>
-			<td><spring-form:input id="name" path="command.name" /></td>
+			<td><spring-form:input id="name" path="object.name" /></td>
 		</tr>
 		<tr>
 			<td><input type="submit" value="<spring:message code="parrot.portal.label.save"/>" /></td>

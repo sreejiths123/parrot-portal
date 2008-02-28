@@ -3,13 +3,17 @@
 
 <beans>
 
-    <bean id="newsController" class="com.parrot.portal.news.controller.NewsController" >
-    </bean>
+	<import resource="rsServletContext.xml" />
     
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping"> 
         <property name="mappings">
             <props>
-                <prop key="/list.html">newsController</prop>
+                <prop key="/add-article.html">rs-addArticleController</prop>
+                <prop key="/edit-article.html">rs-modifyArticleController</prop>
+                <prop key="/list-article.html">rs-listArticleController</prop>
+                <prop key="/add-category.html">rs-addCategoryController</prop>
+                <prop key="/edit-category.html">rs-modifyCategoryController</prop>
+                <prop key="/list-category.html">rs-listCategoryController</prop>
             </props>
         </property>
     </bean>
@@ -21,7 +25,7 @@
     </bean>
     
     <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
-        <property name="basename" value="messages" />
+        <property name="basename" value="rs-messages" />
     </bean>
     
 </beans>
