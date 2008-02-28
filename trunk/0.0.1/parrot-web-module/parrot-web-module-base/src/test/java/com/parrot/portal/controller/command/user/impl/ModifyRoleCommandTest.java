@@ -29,11 +29,11 @@ public class ModifyRoleCommandTest {
     
     /**
      * Test method for
-     * {@link com.parrot.portal.controller.command.user.impl.AbstractParrotCommand#getCommand()}.
+     * {@link com.parrot.portal.controller.command.user.impl.AbstractParrotCommand#getObject()}.
      */
     @Test
     public void testGetCommand() {
         assertNotNull(command);
-        assertNotNull(command.getCommand());
+        assertNotNull(command.getObject());
     }
 }

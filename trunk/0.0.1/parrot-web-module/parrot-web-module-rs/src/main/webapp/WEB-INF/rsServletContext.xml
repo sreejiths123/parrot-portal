@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	
+	<bean id="rs-articleValidator" class="com.parrot.portal.rs.validator.ArticleValidator" />
+	<bean id="rs-categoryValidator" class="com.parrot.portal.rs.validator.CategoryValidator" />
+
+	<bean id="rs-listArticleController" class="com.parrot.portal.rs.controller.ListArticleController">
+        <property name="viewName" value="list-article" />
+    	<property name="modelName" value="list" />
+    	
+    	<property name="service" ref="rs-service" />
+    </bean>
+
+    <bean id="rs-addArticleController" class="com.parrot.portal.rs.controller.secure.AddArticleController" parent="abstractSimpleFormController">
+        <property name="sessionForm" value="true" />
+        <property name="commandName" value="article" />
+        <property name="commandClass" value="com.parrot.portal.rs.domain.impl.Article" />
+        <property name="validator" ref="rs-articleValidator" />
+        <property name="formView" value="add-article" />
+        <property name="successView" value="list-article.html" />
+        
+        <property name="service" ref="rs-service" />
+    </bean>
+    
+    <bean id="rs-modifyArticleController" class="com.parrot.portal.rs.controller.secure.ModifyArticleController">
+    	<property name="successView" value="list-article.html" />
+    	<property name="editView" value="edit-article" />
+    	<property name="commandClass" value="com.parrot.portal.rs.command.impl.ModifyArticleCommand" />
+    	<property name="commandName" value="article" />
+    	<property name="validator" ref="defaultCommandValidator" />
+    	
+    	<property name="domainFactory" ref="defaultDomainFactory" />
+    	<property name="service" ref="rs-service" />
+    </bean>
+    
+    
+    <bean id="rs-listCategoryController" class="com.parrot.portal.rs.controller.ListCategoryController">
+        <property name="viewName" value="list-category" />
+    	<property name="modelName" value="list" />
+    	
+    	<property name="service" ref="rs-service" />
+    </bean>
+
+    <bean id="rs-addCategoryController" class="com.parrot.portal.rs.controller.secure.AddCategoryController" parent="abstractSimpleFormController">
+        <property name="sessionForm" value="true" />
+        <property name="commandName" value="category" />
+        <property name="commandClass" value="com.parrot.portal.rs.domain.impl.Category" />
+        <property name="validator" ref="rs-categoryValidator" />
+        <property name="formView" value="add-category" />
+        <property name="successView" value="list-category.html" />
+        
+        <property name="service" ref="rs-service" />
+    </bean>
+    
+    <bean id="rs-modifyCategoryController" class="com.parrot.portal.rs.controller.secure.ModifyCategoryController">
+    	<property name="successView" value="list-category.html" />
+    	<property name="editView" value="edit-category" />
+    	<property name="commandClass" value="com.parrot.portal.rs.command.impl.ModifyCategoryCommand" />
+    	<property name="commandName" value="category" />
+    	<property name="validator" ref="defaultCommandValidator" />
+    	
+    	<property name="domainFactory" ref="defaultDomainFactory" />
+    	<property name="service" ref="rs-service" />
+    </bean>
+ </beans>
