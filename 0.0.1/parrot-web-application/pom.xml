@@ -34,6 +34,7 @@
 
   <modules>
     <module>web-application-eshop</module>
+    <module>web-application-demo</module>
   </modules>
 
 

@@ -9,12 +9,12 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.parrot.portal</groupId>
-	<artifactId>web-application-eshop</artifactId>
+	<artifactId>web-application-demo</artifactId>
 	<packaging>war</packaging>
-	<name>web-application-eshop</name>
+	<name>web-application-demo</name>
 	<version>${version.parrot.build}</version>
 	<build>
-		<finalName>parrot-eshop</finalName>
+		<finalName>parrot-demo</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.codehaus.cargo</groupId>
