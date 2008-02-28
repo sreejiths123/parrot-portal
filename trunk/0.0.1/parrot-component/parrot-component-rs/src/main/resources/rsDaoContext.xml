@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<!--  Dao Layer instances -->
+    <bean id="rs-articleDao" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>com.parrot.portal.rs.domain.dao.IArticleDao</value>
+        </property>
+        <property name="target">        	
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>com.parrot.portal.rs.domain.impl.Article</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    
+    <bean id="rs-categoryDao" parent="abstractDao">
+        <property name="proxyInterfaces">
+            <value>com.parrot.portal.rs.domain.dao.ICategoryDao</value>
+        </property>
+        <property name="target">        	
+            <bean parent="abstractDaoTarget">
+                <constructor-arg>
+                    <value>com.parrot.portal.rs.domain.impl.Category</value>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    
+</beans>
