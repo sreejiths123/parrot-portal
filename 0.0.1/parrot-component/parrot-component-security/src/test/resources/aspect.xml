@@ -3,36 +3,24 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd 
   http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd"
-   xmlns:aop="http://www.springframework.org/schema/aop">
-
-	<bean id="controllerLoggerAspect" class="com.parrot.portal.security.controller.aop.LogControllerRequestAspect" />
+   xmlns:aop="http://www.springframework.org/schema/aop"
+>
 
 	<aop:aspectj-autoproxy />
-	
+
+ 	<bean id="controllerLoggerAspect" class="com.parrot.portal.security.controller.aop.LogControllerRequestAspect" />
+
 	<aop:config>
- 
- 		<aop:pointcut id="handleRequestInternalPointcut" 
- 						expression="execution(* com.parrot.portal.controller..*handleRequestInternal(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)) and args(request,response)" />
- <!-- 
-		 <aop:pointcut id="testPointcutWithoutArgs" expression="execution(* com.parrot.portal.security.controller..someMethod())" />
-		 <aop:pointcut id="testPointcutWithArgs" expression="execution(* com.parrot.portal.security.controller..someMethodWithArgs(java.lang.String)) and args(command)" />
-		 <aop:pointcut id="annotPointcut" expression="@annotation(com.parrot.portal.security.controller.aop.TestAnnotation)" />
-		 -->  
-		<aop:aspect id="controllerLogger" ref="controllerLoggerAspect">
-			
-			<aop:before pointcut-ref="handleRequestInternalPointcut" method="logInternalRequest"/>
-			
-			<!-- 
-			<aop:before	pointcut-ref="testPointcutWithoutArgs" method="checkBefore" />
-			
-			<aop:before	pointcut-ref="annotPointcut" method="checkAnnotation" />
-			
-			<aop:before pointcut-ref="testPointcutWithArgs" method="checkBeforeWithArg" />
-			
-			<aop:after pointcut-ref="testPointcutWithoutArgs" method="checkAfter" />
- 
-			<aop:around pointcut-ref="testPointcutWithoutArgs" method="checkAround"/>
-			  -->
+
+		<aop:pointcut id="handleRequestInternalPointcut"
+			expression="execution(* com.parrot.portal.controller..handle*(..))" />
+
+		<aop:aspect id="controllerLogger"
+			ref="controllerLoggerAspect">
+
+			<aop:before pointcut-ref="handleRequestInternalPointcut"
+				method="logRequest" />
+
 		</aop:aspect>
 
 	</aop:config>

@@ -7,12 +7,12 @@
 	<!--  Dao Layer instances -->
     <bean id="rs-articleDao" parent="abstractDao">
         <property name="proxyInterfaces">
-            <value>com.parrot.portal.rs.domain.dao.IArticleDao</value>
+            <value>com.parrot.portal.domain.rs.dao.IArticleDao</value>
         </property>
         <property name="target">        	
             <bean parent="abstractDaoTarget">
                 <constructor-arg>
-                    <value>com.parrot.portal.rs.domain.impl.Article</value>
+                    <value>com.parrot.portal.domain.rs.impl.Article</value>
                 </constructor-arg>
             </bean>
         </property>
@@ -20,12 +20,12 @@
     
     <bean id="rs-categoryDao" parent="abstractDao">
         <property name="proxyInterfaces">
-            <value>com.parrot.portal.rs.domain.dao.ICategoryDao</value>
+            <value>com.parrot.portal.domain.rs.dao.ICategoryDao</value>
         </property>
         <property name="target">        	
             <bean parent="abstractDaoTarget">
                 <constructor-arg>
-                    <value>com.parrot.portal.rs.domain.impl.Category</value>
+                    <value>com.parrot.portal.domain.rs.impl.Category</value>
                 </constructor-arg>
             </bean>
         </property>

@@ -15,18 +15,18 @@
 	<!-- TODO: change load time weaver to another one for deployment -this os for testing only -->
 	<context:load-time-weaver weaver-class="org.springframework.instrument.classloading.SimpleLoadTimeWeaver"/>		
 
-	<bean id="rs-service" class="com.parrot.portal.rs.service.impl.RsService">
+	<bean id="rs-service" class="com.parrot.portal.service.rs.impl.RsService">
 		<property name="articleDao" ref="rs-articleDao" />
 		<property name="categoryDao" ref="rs-categoryDao" />
 	</bean>
 
-	<bean id="rs-article" class="com.parrot.portal.rs.domain.impl.Article" scope="prototype"  >
+	<bean id="rs-article" class="com.parrot.portal.domain.rs.impl.Article" scope="prototype"  >
 		<property name="approver" ref="domain-user" />
 		<property name="author" ref="domain-user" />
 		<property name="category" ref="rs-category" />
 	</bean>
 	
-	<bean id="rs-category" class="com.parrot.portal.rs.domain.impl.Category" scope="prototype" >
+	<bean id="rs-category" class="com.parrot.portal.domain.rs.impl.Category" scope="prototype" >
 		<property name="parent" ref="rs-category" />
 	</bean>	
 </beans>

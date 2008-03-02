@@ -5,22 +5,21 @@
   http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd"
    xmlns:aop="http://www.springframework.org/schema/aop"
 >
-<!-- 
+
 	<aop:aspectj-autoproxy />
- -->
- 	<bean id="controllerLoggerAspect"
-		class="com.parrot.portal.security.controller.aop.LogControllerRequestAspect" />
+
+ 	<bean id="controllerLoggerAspect" class="com.parrot.portal.security.controller.aop.LogControllerRequestAspect" />
 
 	<aop:config>
 
 		<aop:pointcut id="handleRequestInternalPointcut"
-			expression="execution(* com.parrot.portal..*handleRequestInternal(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)) and args(request,response)" />
+			expression="execution(* com.parrot.portal.controller..handle*(..))" />
 
 		<aop:aspect id="controllerLogger"
 			ref="controllerLoggerAspect">
 
 			<aop:before pointcut-ref="handleRequestInternalPointcut"
-				method="logInternalRequest" />
+				method="logRequest" />
 
 		</aop:aspect>
 
