@@ -1,4 +1,4 @@
-package com.parrot.portal.controller.secure.user;
+package com.parrot.portal.controller.secure;
 
 import java.util.List;
 
@@ -26,6 +26,8 @@ public abstract class AbstractModifyController<T> extends AbstractParrotCommandC
      */
     public static String LAST_SELECTED_OBJECT_ID = "parrot.last_selected_object_id";
     
+    private HttpServletRequest currentRequest;
+    
     /**
      * @param command
      */
@@ -36,10 +38,20 @@ public abstract class AbstractModifyController<T> extends AbstractParrotCommandC
      */
     public abstract void doUpdate(T command);
     
+    /**
+     * @return current session
+     */
+    protected HttpSession getSession() {
+        
+        return currentRequest.getSession();
+    }
+    
     @SuppressWarnings("unchecked")
     @Override
     protected ModelAndView handle(HttpServletRequest request, HttpServletResponse response, Object cmd, BindException ex)
             throws Exception {
+        
+        this.currentRequest = request;
         
         IParrotCommand<T> command = (IParrotCommand<T>)cmd;
         
@@ -63,7 +75,7 @@ public abstract class AbstractModifyController<T> extends AbstractParrotCommandC
                 List<T> collection = (List<T>)request.getSession().getAttribute(CollectionTag.LAST_COLLECTION);
                 command.setObject(collection.get(command.getId()));
                 
-                getSession(request).setAttribute(LAST_SELECTED_OBJECT_ID, command.getObjectsId());
+                getSession().setAttribute(LAST_SELECTED_OBJECT_ID, command.getObjectsId());
                 
                 return new ModelAndView(getEditView(), getCommandName(), command);
         }
@@ -71,15 +83,19 @@ public abstract class AbstractModifyController<T> extends AbstractParrotCommandC
         return new ModelAndView(new RedirectView(getSuccessView()));
     }
     
-    private HttpSession getSession(HttpServletRequest request) {
-        return request.getSession();
-    }
-    
+    /**
+     * do a validation of the given command. Id of the command has been stored before. Check the
+     * value of stored id against id of given command is performed.
+     * 
+     * @param command
+     *                to be checked
+     * @param request
+     *                current
+     */
     private void validateObject(IParrotCommand<T> command, HttpServletRequest request) {
         
-        Integer idFromSession = (Integer)getSession(request).getAttribute(LAST_SELECTED_OBJECT_ID);
+        Integer idFromSession = (Integer)getSession().getAttribute(LAST_SELECTED_OBJECT_ID);
         
-
         if (idFromSession == null) {
             throw new LogicalErrorException("not valid object or object id for this command - hack attempt?");
         }
