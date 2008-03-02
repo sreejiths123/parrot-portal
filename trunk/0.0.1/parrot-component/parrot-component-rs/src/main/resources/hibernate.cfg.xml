@@ -7,8 +7,8 @@
 
 	<session-factory>
 		<property name="dialect">org.hibernate.dialect.DerbyDialect</property>
-		<mapping resource="com/parrot/portal/rs/domain/impl/Article.hbm.xml" />
-		<mapping resource="com/parrot/portal/rs/domain/impl/Category.hbm.xml" />
+		<mapping resource="com/parrot/portal/domain/rs/impl/Article.hbm.xml" />
+		<mapping resource="com/parrot/portal/domain/rs/impl/Category.hbm.xml" />
 	</session-factory>
 
 </hibernate-configuration>

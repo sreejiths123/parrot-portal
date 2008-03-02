@@ -3,20 +3,20 @@
 
 <beans>
 	
-	<bean id="rs-articleValidator" class="com.parrot.portal.rs.validator.ArticleValidator" />
-	<bean id="rs-categoryValidator" class="com.parrot.portal.rs.validator.CategoryValidator" />
+	<bean id="rs-articleValidator" class="com.parrot.portal.controller.validator.rs.ArticleValidator" />
+	<bean id="rs-categoryValidator" class="com.parrot.portal.controller.validator.rs.CategoryValidator" />
 
-	<bean id="rs-listArticleController" class="com.parrot.portal.rs.controller.ListArticleController">
+	<bean id="rs-listArticleController" class="com.parrot.portal.controller.rs.ListArticleController">
         <property name="viewName" value="list-article" />
     	<property name="modelName" value="list" />
     	
     	<property name="service" ref="rs-service" />
     </bean>
 
-    <bean id="rs-addArticleController" class="com.parrot.portal.rs.controller.secure.AddArticleController" parent="abstractSimpleFormController">
+    <bean id="rs-addArticleController" class="com.parrot.portal.controller.secure.rs.AddArticleController" parent="abstractSimpleFormController">
         <property name="sessionForm" value="true" />
         <property name="commandName" value="article" />
-        <property name="commandClass" value="com.parrot.portal.rs.domain.impl.Article" />
+        <property name="commandClass" value="com.parrot.portal.domain.rs.impl.Article" />
         <property name="validator" ref="rs-articleValidator" />
         <property name="formView" value="add-article" />
         <property name="successView" value="list-article.html" />
@@ -24,10 +24,10 @@
         <property name="service" ref="rs-service" />
     </bean>
     
-    <bean id="rs-modifyArticleController" class="com.parrot.portal.rs.controller.secure.ModifyArticleController">
+    <bean id="rs-modifyArticleController" class="com.parrot.portal.controller.secure.rs.ModifyArticleController">
     	<property name="successView" value="list-article.html" />
     	<property name="editView" value="edit-article" />
-    	<property name="commandClass" value="com.parrot.portal.rs.command.impl.ModifyArticleCommand" />
+    	<property name="commandClass" value="com.parrot.portal.controller.command.rs.impl.ModifyArticleCommand" />
     	<property name="commandName" value="article" />
     	<property name="validator" ref="defaultCommandValidator" />
     	
@@ -36,17 +36,17 @@
     </bean>
     
     
-    <bean id="rs-listCategoryController" class="com.parrot.portal.rs.controller.ListCategoryController">
+    <bean id="rs-listCategoryController" class="com.parrot.portal.controller.rs.ListCategoryController">
         <property name="viewName" value="list-category" />
     	<property name="modelName" value="list" />
     	
     	<property name="service" ref="rs-service" />
     </bean>
 
-    <bean id="rs-addCategoryController" class="com.parrot.portal.rs.controller.secure.AddCategoryController" parent="abstractSimpleFormController">
+    <bean id="rs-addCategoryController" class="com.parrot.portal.controller.secure.rs.AddCategoryController" parent="abstractSimpleFormController">
         <property name="sessionForm" value="true" />
         <property name="commandName" value="category" />
-        <property name="commandClass" value="com.parrot.portal.rs.domain.impl.Category" />
+        <property name="commandClass" value="com.parrot.portal.domain.rs.impl.Category" />
         <property name="validator" ref="rs-categoryValidator" />
         <property name="formView" value="add-category" />
         <property name="successView" value="list-category.html" />
@@ -54,10 +54,10 @@
         <property name="service" ref="rs-service" />
     </bean>
     
-    <bean id="rs-modifyCategoryController" class="com.parrot.portal.rs.controller.secure.ModifyCategoryController">
+    <bean id="rs-modifyCategoryController" class="com.parrot.portal.controller.secure.rs.ModifyCategoryController">
     	<property name="successView" value="list-category.html" />
     	<property name="editView" value="edit-category" />
-    	<property name="commandClass" value="com.parrot.portal.rs.command.impl.ModifyCategoryCommand" />
+    	<property name="commandClass" value="com.parrot.portal.controller.command.rs.impl.ModifyCategoryCommand" />
     	<property name="commandName" value="category" />
     	<property name="validator" ref="defaultCommandValidator" />
     	

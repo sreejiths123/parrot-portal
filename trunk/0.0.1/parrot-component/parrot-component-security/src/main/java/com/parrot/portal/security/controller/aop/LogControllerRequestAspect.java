@@ -4,9 +4,6 @@
 
 package com.parrot.portal.security.controller.aop;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.apache.log4j.Logger;
 
 
@@ -15,7 +12,7 @@ import org.apache.log4j.Logger;
  */
 public class LogControllerRequestAspect {
     
-    private static Logger logInternalRequest = Logger.getLogger("Controller.internalRequest");
+    private static Logger logInternalRequest = Logger.getLogger("Controller.request");
     
     /**
      * method for log internal servlet's requests
@@ -23,7 +20,8 @@ public class LogControllerRequestAspect {
      * @param request
      * @param response
      */
-    public void logInternalRequest(HttpServletRequest request, HttpServletResponse response) {
+    public void logRequest() {
         logInternalRequest.info("I've got it...");
+        System.out.println("mam te.");
     }
 }
