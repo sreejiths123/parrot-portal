@@ -45,12 +45,6 @@
 		</dependency>
 		<dependency>
 			<groupId>com.parrot.portal</groupId>
-			<artifactId>web-module-rs</artifactId>
-			<version>${version.parrot.build}</version>
-			<type>war</type>
-		</dependency>
-		<dependency>
-			<groupId>com.parrot.portal</groupId>
 			<artifactId>web-module-base</artifactId>
 			<version>${version.parrot.build}</version>
 			<type>war</type>

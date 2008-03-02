@@ -81,7 +81,7 @@
 
   <modules>
     <module>parrot-web-module-base</module>
-    <module>parrot-web-module-rs</module>
+    <!--module>parrot-web-module-rs</module-->
   </modules>
 
 </project>

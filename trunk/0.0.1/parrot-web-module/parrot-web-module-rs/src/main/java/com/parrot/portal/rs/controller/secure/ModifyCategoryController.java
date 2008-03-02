@@ -2,7 +2,7 @@ package com.parrot.portal.rs.controller.secure;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.parrot.portal.controller.secure.user.AbstractModifyController;
+import com.parrot.portal.controller.secure.AbstractModifyController;
 import com.parrot.portal.domain.factory.IDomainFactory;
 import com.parrot.portal.rs.command.impl.ModifyCategoryCommand;
 import com.parrot.portal.rs.domain.ICategory;
