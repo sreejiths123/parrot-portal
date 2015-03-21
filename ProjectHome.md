@@ -1,0 +1,1 @@
+Spring based e-shop written in Java 5.
